@@ -11,6 +11,12 @@ from supervision.dataset.formats.pascal_voc import (
     detections_to_pascal_voc,
     load_pascal_voc_annotations,
 )
+
+from supervision.dataset.formats.yolo_txt import (
+    detections_to_yolo_txt,
+    load_yolo_txt_annotations
+)
+
 from supervision.detection.core import Detections
 from supervision.file import list_files_with_extensions
 
@@ -126,3 +132,117 @@ class Dataset:
             image_name: detections for image_name, detections, _ in raw_annotations
         }
         return Dataset(classes=classes, images=images, annotations=annotations)
+
+    @classmethod
+    def from_yolov5(
+        cls, data_yaml_path: str
+    ) -> Dataset:
+        """
+        Creates a Dataset instance from YOLOv5 formatted data.
+
+        Args:
+            data_yaml_path (str): The path to the data.yaml file.
+
+        Returns:
+            Dataset: A Dataset instance containing the loaded images and annotations.
+        """
+        with open(data_yaml_path, "r") as f:
+            data_config = yaml.safe_load(f)
+
+        splits = ["train", "val", "test"]
+
+        images = {}
+        annotations = {}
+
+        for split in splits:
+            if split in data_config or split == "test":
+                images_directory_path = Path(data_yaml_path).parent / split / "images"
+                labels_directory_path = Path(data_yaml_path).parent / split / "labels"
+                
+                print(images_directory_path)
+
+                split_image_paths = list_files_with_extensions(
+                    directory=images_directory_path, extensions=["jpg", "jpeg", "png"]
+                )
+                
+                print(split_image_paths)
+
+                split_images = {
+                    image_path.name: cv2.imread(str(image_path)) for image_path in split_image_paths
+                }
+
+                for image_name, image in split_images.items():
+                    if image_name not in images:
+                        images[image_name] = image
+
+                        image_name_path = Path(image_name)
+                        annotation_path = labels_directory_path / f"{image_name_path.stem}.txt"
+                        if annotation_path.exists():
+                            detections = load_yolo_txt_annotations(str(annotation_path), image_shape=image.shape[:2])
+                            annotations[image_name] = detections
+                            
+        return Dataset(classes=data_config["names"], images=images, annotations=annotations)
+
+    def as_yolov5(
+        self,
+        output_dir: Union[str, Path],
+        split_train_val_test: Optional[Tuple[float, float, float]] = None,
+    ):
+        output_dir = Path(output_dir)
+
+        # Create necessary directories
+        (output_dir / "train" / "images").mkdir(parents=True, exist_ok=True)
+        (output_dir / "train" / "labels").mkdir(parents=True, exist_ok=True)
+        (output_dir / "val" / "images").mkdir(parents=True, exist_ok=True)
+        (output_dir / "val" / "labels").mkdir(parents=True, exist_ok=True)
+        (output_dir / "test" / "images").mkdir(parents=True, exist_ok=True)
+        (output_dir / "test" / "labels").mkdir(parents=True, exist_ok=True)
+
+        # Create data.yaml
+        with open(output_dir / "data.yaml", "w") as f:
+            f.write("train: ./train/images/\n")
+            f.write("val: ./val/images/\n")
+            f.write("nc: {}\n".format(len(self.classes)))
+            f.write("names: {}\n".format(self.classes))
+
+        # Shuffle and split data
+        image_names = list(self.images.keys())
+        if split_train_val_test:
+            random.shuffle(image_names)
+            train_ratio, val_ratio, test_ratio = split_train_val_test
+            num_train = round(len(image_names) * train_ratio)
+            num_val = round(len(image_names) * val_ratio)
+
+            train_image_names = image_names[:num_train]
+            val_image_names = image_names[num_train:num_train + num_val]
+            test_image_names = image_names[num_train + num_val:]
+
+            splits = {
+                "train": train_image_names,
+                "val": val_image_names,
+                "test": test_image_names,
+            }
+        else:
+            splits = {
+                "train": image_names,
+                "val": [],
+                "test": [],
+            }
+
+        # Save images and labels
+        for split, image_names in splits.items():
+            for image_name in image_names:
+                image = self.images[image_name]
+                detections = self.annotations[image_name]
+
+                # Save image
+                if not image_name.lower().endswith(".jpg"):
+                    image_name = Path(image_name).with_suffix(".jpg")
+                image_path = output_dir / split / "images" / image_name
+                cv2.imwrite(str(image_path), image)
+
+                # Save label
+                yolo_txt = detections_to_yolo_txt(detections, image_shape=image.shape[:2])
+                label_path = output_dir / split / "labels" / image_name.with_suffix(".txt")
+                with open(label_path, "w") as f:
+                    f.write(yolo_txt)
