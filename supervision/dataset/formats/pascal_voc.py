@@ -1,12 +1,72 @@
-from typing import List, Optional, Tuple
+from typing import List, Optional, Tuple, Dict
 from xml.dom.minidom import parseString
 from xml.etree.ElementTree import Element, SubElement, parse, tostring
 
 import numpy as np
 
+from supervision.file import list_files_with_extensions
 from supervision.dataset.ultils import approximate_mask_with_polygons
 from supervision.detection.core import Detections
 from supervision.detection.utils import polygon_to_xyxy
+
+
+def pascal_voc_annotations_to_detections(
+    annotation_path: str,
+) -> Tuple[Detections, List[str]]:
+    tree = parse(annotation_path)
+    root = tree.getroot()
+
+    xyxy = []
+    class_names = []
+    for obj in root.findall("object"):
+        class_name = obj.find("name").text
+        class_names.append(class_name)
+
+        bbox = obj.find("bndbox")
+        x1 = int(bbox.find("xmin").text)
+        y1 = int(bbox.find("ymin").text)
+        x2 = int(bbox.find("xmax").text)
+        y2 = int(bbox.find("ymax").text)
+
+        xyxy.append([x1, y1, x2, y2])
+
+    xyxy = np.array(xyxy)
+    detections = Detections(xyxy=xyxy)
+
+    return detections, class_names
+
+
+def load_pascal_voc_annotations(
+    images_directory_path: str,
+    annotations_directory_path: str
+) -> Tuple[List[str], Dict[str, np.ndarray], Dict[str, Detections]]:
+    image_paths = list_files_with_extensions(
+        directory=images_directory_path, extensions=["jpg", "jpeg", "png"]
+    )
+    annotation_paths = list_files_with_extensions(
+        directory=annotations_directory_path, extensions=["xml"]
+    )
+
+    raw_annotations: List[Tuple[Detections, List[str]]] = [
+        pascal_voc_annotations_to_detections(annotation_path=str(annotation_path))
+        for annotation_path in annotation_paths
+    ]
+
+    classes = []
+    for annotation in raw_annotations:
+        classes.extend(annotation[1])
+    classes = list(set(classes))
+
+    for annotation in raw_annotations:
+        class_id = [classes.index(class_name) for class_name in annotation[2]]
+        annotation[0].class_id = np.array(class_id)
+
+    images = {
+        image_path.name: cv2.imread(str(image_path)) for image_path in image_paths
+    }
+    annotations = {
+        image_name: detections for image_name, detections, _ in raw_annotations
+    }
 
 
 def object_to_pascal_voc(
@@ -120,40 +180,3 @@ def detections_to_pascal_voc(
     xml_string = parseString(tostring(annotation)).toprettyxml(indent="  ")
 
     return xml_string
-
-
-def load_pascal_voc_annotations(
-    annotation_path: str,
-) -> Tuple[str, Detections, List[str]]:
-    """
-    Loads PASCAL VOC XML annotations and returns the image name, a Detections instance, and a list of class names.
-
-    Args:
-        annotation_path (str): The path to the PASCAL VOC XML annotations file.
-
-    Returns:
-        Tuple[str, Detections, List[str]]: A tuple containing the image name, a Detections instance, and a list of class names of objects in the detections.
-    """
-    tree = parse(annotation_path)
-    root = tree.getroot()
-
-    image_name = root.find("filename").text
-
-    xyxy = []
-    class_names = []
-    for obj in root.findall("object"):
-        class_name = obj.find("name").text
-        class_names.append(class_name)
-
-        bbox = obj.find("bndbox")
-        x1 = int(bbox.find("xmin").text)
-        y1 = int(bbox.find("ymin").text)
-        x2 = int(bbox.find("xmax").text)
-        y2 = int(bbox.find("ymax").text)
-
-        xyxy.append([x1, y1, x2, y2])
-
-    xyxy = np.array(xyxy)
-    detections = Detections(xyxy=xyxy)
-
-    return image_name, detections, class_names

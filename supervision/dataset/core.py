@@ -4,7 +4,9 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
+import os
 import cv2
+import shutil
 import numpy as np
 
 from supervision.dataset.formats.pascal_voc import (
@@ -14,6 +16,51 @@ from supervision.dataset.formats.pascal_voc import (
 from supervision.dataset.formats.yolo import load_yolo_annotations
 from supervision.detection.core import Detections
 from supervision.file import list_files_with_extensions
+
+
+class LazyImage:
+
+    def __init__(self, path: str, array: Optional[np.ndarray] = None):
+        if not os.path.isfile(path):
+            raise FileNotFoundError(f"The file '{path}' does not exist.")
+        self.path = path
+        self.__array: Optional[np.ndarray] = array
+        self.__shape: Optional[Tuple[int, ...]] = array.shape if array is not None else None
+
+    @property
+    def shape(self) -> Tuple[int, ...]:
+        if self.__array is not None:
+            return self.__array.shape
+        elif self.__shape is not None:
+            return self.__shape
+        else:
+            img = cv2.imread(self.path)
+            self.__shape = img.shape
+            return self.__shape
+
+    @shape.setter
+    def shape(self, var: Tuple[int, ...]) -> None:
+        self.__shape = var
+
+    @property
+    def array(self) -> np.ndarray:
+        if self.__array is not None:
+            return self.__array
+        else:
+            img = cv2.imread(self.path)
+            self.__shape = img.shape
+            return self.__array
+
+    def load(self) -> None:
+        self.__array = cv2.imread(self.path)
+        self.__shape = self.__array.shape
+
+    def save(self, target_path: str) -> None:
+        if self.__array is not None:
+            cv2.imwrite(target_path, self.__array)
+        else:
+            shutil.copy2(self.path, target_path)
+
 
 
 @dataclass
