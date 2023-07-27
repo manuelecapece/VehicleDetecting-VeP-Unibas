@@ -8,7 +8,7 @@ from supervision.geometry.dataclasses import Point, Rect, Vector
 from supervision.tools.detections import Detections
 
 
-class LineCounter:
+class LineCounterCar:
     def __init__(self, start: Point, end: Point):
         """
         Initialize a LineCounter object.
@@ -63,11 +63,11 @@ class LineCounter:
                 self.out_count += 1
 
 
-class LineCounterAnnotator:
+class LineCounterAnnotatorCar:
     def __init__(
         self,
         thickness: float = 2,
-        color: Color = Color.white(),
+        color: Color = Color.yellow(),
         text_thickness: float = 2,
         text_color: Color = Color.black(),
         text_scale: float = 0.5,
@@ -93,7 +93,7 @@ class LineCounterAnnotator:
         self.text_offset: float = text_offset
         self.text_padding: int = text_padding
 
-    def annotate(self, frame: np.ndarray, line_counter: LineCounter) -> np.ndarray:
+    def annotateCar(self, frame: np.ndarray, line_counter_car: LineCounterCar) -> np.ndarray:
         """
         Draws the line on the frame using the line_counter provided.
 
@@ -103,8 +103,8 @@ class LineCounterAnnotator:
         """
         cv2.line(
             frame,
-            line_counter.vector.start.as_xy_int_tuple(),
-            line_counter.vector.end.as_xy_int_tuple(),
+            line_counter_car.vector.start.as_xy_int_tuple(),
+            line_counter_car.vector.end.as_xy_int_tuple(),
             self.color.as_bgr(),
             self.thickness,
             lineType=cv2.LINE_AA,
@@ -112,7 +112,7 @@ class LineCounterAnnotator:
         )
         cv2.circle(
             frame,
-            line_counter.vector.start.as_xy_int_tuple(),
+            line_counter_car.vector.start.as_xy_int_tuple(),
             radius=5,
             color=self.text_color.as_bgr(),
             thickness=-1,
@@ -120,15 +120,15 @@ class LineCounterAnnotator:
         )
         cv2.circle(
             frame,
-            line_counter.vector.end.as_xy_int_tuple(),
+            line_counter_car.vector.end.as_xy_int_tuple(),
             radius=5,
             color=self.text_color.as_bgr(),
             thickness=-1,
             lineType=cv2.LINE_AA,
         )
 
-        in_text = f"in: {line_counter.in_count}"
-        out_text = f"out: {line_counter.out_count}"
+        in_text = f"Car in: {line_counter_car.in_count}"
+        out_text = f"Car out: {line_counter_car.out_count}"
 
         (in_text_width, in_text_height), _ = cv2.getTextSize(
             in_text, cv2.FONT_HERSHEY_SIMPLEX, self.text_scale, self.text_thickness
@@ -137,25 +137,12 @@ class LineCounterAnnotator:
             out_text, cv2.FONT_HERSHEY_SIMPLEX, self.text_scale, self.text_thickness
         )
 
-        in_text_x = int(
-            (line_counter.vector.end.x + line_counter.vector.start.x - in_text_width)
-            / 2
-        )
-        in_text_y = int(
-            (line_counter.vector.end.y + line_counter.vector.start.y + in_text_height)
-            / 2
-            - self.text_offset * in_text_height
-        )
-
-        out_text_x = int(
-            (line_counter.vector.end.x + line_counter.vector.start.x - out_text_width)
-            / 2
-        )
-        out_text_y = int(
-            (line_counter.vector.end.y + line_counter.vector.start.y + out_text_height)
-            / 2
-            + self.text_offset * out_text_height
-        )
+        #DX
+        in_text_x = int(1630) 
+        in_text_y = int(50) 
+        #SX
+        out_text_x = int(50) 
+        out_text_y = int(50) 
 
         in_text_background_rect = Rect(
             x=in_text_x,

@@ -91,6 +91,18 @@ class Color:
     def blue(cls) -> Color:
         return Color.from_hex(color_hex="#0000ff")
 
+    @classmethod
+    def purple(cls) -> Color:
+        return Color.from_hex(color_hex="#9b30ff")
+
+    @classmethod
+    def yellow(cls) -> Color:
+        return Color.from_hex(color_hex="#ffff00")
+
+    @classmethod
+    def pink(cls) -> Color:
+        return Color.from_hex(color_hex="#ff00ff")
+
 
 @dataclass
 class ColorPalette:
