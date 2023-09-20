@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>870f0e534784415e8fa31642418557f9</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="cell markdown" id="sF1X5hUQAvF_">
+<p>#<strong>1) installazione strumenti utilizzati</strong></p>
+</div>
+<div class="cell markdown" id="jHCJynheEP45">
+<p>#1.1) Installazione di YOLO v8</p>
+</div>
+<section id="verifica-utilizzo-gpu" class="cell markdown"
+id="K-C5WRwQE6pc">
+<h3>Verifica utilizzo GPU</h3>
+<p>Selezionare la GPU in Runtime&gt;Cambia tipo di runtime</p>
+</section>
+<div class="cell code" id="hRGuITStIWm-">
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>nvidia<span class="op">-</span>smi</span></code></pre></div>
+</div>
+<div class="cell markdown" id="joVbK07BJotv">
+<p>Variabile di gestione dei percorsi</p>
+</div>
+<div class="cell code" id="F7qp4CVwJmVL">
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>HOME <span class="op">=</span> os.getcwd()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(HOME)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>cartellaVideo <span class="op">=</span> <span class="st">&quot;/content/video&quot;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>os.makedirs(cartellaVideo, exist_ok<span class="op">=</span><span class="va">True</span>) <span class="co">#creo la cartella che conterrà i vari video</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>cartellaRisultati <span class="op">=</span> <span class="st">&quot;/content/video/result&quot;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>os.makedirs(cartellaRisultati, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>cartellaRisultatiPerCasistiche <span class="op">=</span> <span class="st">&quot;/content/video/result/per_casistiche/&quot;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>os.makedirs(cartellaRisultatiPerCasistiche, exist_ok<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+</div>
+<div class="cell markdown" id="8-lJaZfAJ5sd">
+<p>Installazione via pip</p>
+</div>
+<div class="cell code" id="TrOc16HOJ-gf">
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install ultralytics<span class="op">==</span><span class="fl">8.0.20</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython <span class="im">import</span> display</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>display.clear_output()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ultralytics</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>ultralytics.checks()</span></code></pre></div>
+</div>
+<div class="cell markdown" id="rT7IK2g-ZGud">
+<p>#1.2) Installazione di ByteTrack</p>
+</div>
+<div class="cell code" id="B2hQsr7PZL0F">
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>cd {HOME}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>git clone https:<span class="op">//</span>github.com<span class="op">/</span>ifzhang<span class="op">/</span>ByteTrack.git</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>cd {HOME}<span class="op">/</span>ByteTrack</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># workaround related to https://github.com/roboflow/notebooks/issues/80</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>sed <span class="op">-</span>i <span class="st">&#39;s/onnx==1.8.1/onnx==1.9.0/g&#39;</span> requirements.txt</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip3 install <span class="op">-</span>q <span class="op">-</span>r requirements.txt</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>python3 setup.py <span class="op">-</span>q develop</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install <span class="op">-</span>q cython_bbox</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install <span class="op">-</span>q onemetric</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># workaround related to https://github.com/roboflow/notebooks/issues/112 and https://github.com/roboflow/notebooks/issues/106</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install <span class="op">-</span>q loguru lap thop</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython <span class="im">import</span> display</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>display.clear_output()</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="ss">f&quot;</span><span class="sc">{</span>HOME<span class="sc">}</span><span class="ss">/ByteTrack&quot;</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yolox</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;yolox.__version__:&quot;</span>, yolox.__version__)</span></code></pre></div>
+</div>
+<div class="cell markdown" id="O03wFng-aSLB">
+<p>#1.3) Installazione Roboflow Supervision</p>
+</div>
+<div class="cell code" id="dJQM402Po5ao">
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>cd {HOME}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>git clone <span class="op">-</span>b svUnibas https:<span class="op">//</span>github.com<span class="op">/</span>manuelecapece<span class="op">/</span>VehicleDetecting<span class="op">-</span>VeP<span class="op">-</span>Unibas</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>cd {HOME}<span class="op">/</span>VehicleDetecting<span class="op">-</span>VeP<span class="op">-</span>Unibas</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install <span class="op">-</span>e <span class="st">&#39;.[dev]&#39;</span></span></code></pre></div>
+</div>
+<div class="cell markdown" id="8q7jaoXwKWw3">
+<p>Import necessari</p>
+</div>
+<div class="cell code" id="4xGDabx3KbAe">
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ultralytics <span class="im">import</span> YOLO</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display, Image, Video, HTML</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> yolox.tracker.byte_tracker <span class="im">import</span> BYTETracker, STrack</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> onemetric.cv.utils.iou <span class="im">import</span> box_iou_batch</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dataclasses <span class="im">import</span> dataclass</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="at">@dataclass</span>(frozen<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> BYTETrackerArgs:</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    track_thresh: <span class="bu">float</span> <span class="op">=</span> <span class="fl">0.25</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    track_buffer: <span class="bu">int</span> <span class="op">=</span> <span class="dv">30</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    match_thresh: <span class="bu">float</span> <span class="op">=</span> <span class="fl">0.8</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    aspect_ratio_thresh: <span class="bu">float</span> <span class="op">=</span> <span class="fl">3.0</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    min_box_area: <span class="bu">float</span> <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    mot20: <span class="bu">bool</span> <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> zipfile <span class="im">import</span> ZipFile</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.request <span class="im">import</span> urlretrieve</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Image</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">&#39;figure.figsize&#39;</span>] <span class="op">=</span> [<span class="dv">12</span>, <span class="dv">12</span>]</span></code></pre></div>
+</div>
+<div class="cell code" id="-puhMUfY5R-M">
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> copy <span class="im">import</span> deepcopy</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> supervision.draw.color <span class="im">import</span> ColorPalette</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> supervision.geometry.dataclasses <span class="im">import</span> Point</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> supervision.video.dataclasses <span class="im">import</span> VideoInfo</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> supervision.video.source <span class="im">import</span> get_video_frames_generator</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> supervision.video.sink <span class="im">import</span> VideoSink</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> supervision.notebook.utils <span class="im">import</span> show_frame_in_notebook</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> supervision.tools.detections <span class="im">import</span> Detections, BoxAnnotator</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> supervision.tools.line_counter <span class="im">import</span> LineCounter, LineCounterAnnotator</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> supervision.tools.line_counter_car <span class="im">import</span> LineCounterCar, LineCounterAnnotatorCar</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> supervision.tools.line_counter_moto <span class="im">import</span> LineCounterMoto, LineCounterAnnotatorMoto</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> supervision.tools.line_counter_bus <span class="im">import</span> LineCounterBus, LineCounterAnnotatorBus</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> supervision.tools.line_counter_truck <span class="im">import</span> LineCounterTruck, LineCounterAnnotatorTruck</span></code></pre></div>
+</div>
+<section id="tracking-utils" class="cell markdown" id="FO9Xs_F9ceYa">
+<h2>Tracking utils</h2>
+</section>
+<div class="cell markdown" id="bVJPGcWWBmT5">
+<p>Script costituito dai metodi necessari per il matching delle
+predizioni fatte da YOLO e la posizione prevista degli oggetti (dato il
+loro id) con i dati provenienti da ByteTracker</p>
+</div>
+<div class="cell code" id="OvOYSbhGcmNi">
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> typing <span class="im">import</span> List</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># converts Detections into format that can be consumed by match_detections_with_tracks function</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> detections2boxes(detections: Detections) <span class="op">-&gt;</span> np.ndarray:</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.hstack((</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        detections.xyxy,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        detections.confidence[:, np.newaxis]</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># converts List[STrack] into format that can be consumed by match_detections_with_tracks function</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tracks2boxes(tracks: List[STrack]) <span class="op">-&gt;</span> np.ndarray:</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array([</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>        track.tlbr</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> track</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>        <span class="kw">in</span> tracks</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    ], dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co"># matches our bounding boxes with predictions</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> match_detections_with_tracks(</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    detections: Detections,</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    tracks: List[STrack]</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>) <span class="op">-&gt;</span> Detections:</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> np.<span class="bu">any</span>(detections.xyxy) <span class="kw">or</span> <span class="bu">len</span>(tracks) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> np.empty((<span class="dv">0</span>,))</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    tracks_boxes <span class="op">=</span> tracks2boxes(tracks<span class="op">=</span>tracks)</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    iou <span class="op">=</span> box_iou_batch(tracks_boxes, detections.xyxy)</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    track2detection <span class="op">=</span> np.argmax(iou, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    tracker_ids <span class="op">=</span> [<span class="va">None</span>] <span class="op">*</span> <span class="bu">len</span>(detections)</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> tracker_index, detection_index <span class="kw">in</span> <span class="bu">enumerate</span>(track2detection):</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> iou[tracker_index, detection_index] <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>            tracker_ids[detection_index] <span class="op">=</span> tracks[tracker_index].track_id</span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> tracker_ids</span></code></pre></div>
+</div>
+<div class="cell markdown" id="INIJa0OsbbuX">
+<p>#1.4) Load pre trained model</p>
+</div>
+<div class="cell code" id="KD_3zu5ZbtQU">
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#settings</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>MODEL <span class="op">=</span> <span class="st">&#39;yolov8x.pt&#39;</span></span></code></pre></div>
+</div>
+<div class="cell code" id="nCXlqWxZb6qw">
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> YOLO(MODEL)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>model.fuse()</span></code></pre></div>
+</div>
+<div class="cell markdown" id="7wmySMVgB5Nt">
+<p>#<strong>2) Sezione di download e setting videos che useremo ai fini
+dell'object detections</strong></p>
+</div>
+<div class="cell code" id="TatfmBzQFLaL">
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> shutil</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> drive</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>drive.mount(<span class="st">&#39;/content/drive&#39;</span>)</span></code></pre></div>
+</div>
+<div class="cell markdown" id="azND2J1DYqzy">
+<p>#2.1) Download dei video</p>
+</div>
+<div class="cell markdown" id="e43_19RLaSoF">
+<p>Download da drive e salvataggio sul notebook</p>
+</div>
+<div class="cell code" id="qPeWSscDZbH-">
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>cd {HOME}</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>wget <span class="st">&#39;https://drive.google.com/uc?export=download&amp;id=1V25Rr-Kmzk3Jojsm2iKTF_DWouHWVzZO&#39;</span> <span class="op">-</span>O <span class="op">/</span>content<span class="op">/</span>video<span class="op">/</span>day1.mp4    <span class="co">#percorso di day1</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>wget <span class="st">&#39;https://drive.google.com/uc?export=download&amp;id=1V2f4HrvUZTGrDcQmeEXwskyAkjMcTafE&#39;</span> <span class="op">-</span>O <span class="op">/</span>content<span class="op">/</span>video<span class="op">/</span>day2.mp4    <span class="co">#percorso di day2</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>wget <span class="st">&#39;https://drive.google.com/uc?export=download&amp;id=1V3AdL-SxDtgJmgGCMNzDPE8h3m0HppT2&#39;</span> <span class="op">-</span>O <span class="op">/</span>content<span class="op">/</span>video<span class="op">/</span>day3.mp4    <span class="co">#percorso di day3</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>wget <span class="st">&#39;https://drive.google.com/uc?export=download&amp;id=1VC6Ju9ZUoiCBRQNLoGWOrvA3jwg-0cQb&#39;</span> <span class="op">-</span>O <span class="op">/</span>content<span class="op">/</span>video<span class="op">/</span>day4.mp4    <span class="co">#percorso di day4-snow</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>wget <span class="st">&#39;https://drive.google.com/uc?export=download&amp;id=1VBiWlY13H7RVs3h26Rhx5IzuQ8x1BpzA&#39;</span> <span class="op">-</span>O <span class="op">/</span>content<span class="op">/</span>video<span class="op">/</span>night1.mp4  <span class="co">#percorso di night1</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>wget <span class="st">&#39;https://drive.google.com/uc?export=download&amp;id=1VEqMMzO0vsQfRVYa_DkOxZY9MynKrjX_&#39;</span> <span class="op">-</span>O <span class="op">/</span>content<span class="op">/</span>video<span class="op">/</span>night2.mp4  <span class="co">#percorso di night2</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>wget <span class="st">&#39;https://drive.google.com/uc?export=download&amp;id=1VKQmqGP9O8mZ6KlicB9UX3C_pX0wx7LF&#39;</span> <span class="op">-</span>O <span class="op">/</span>content<span class="op">/</span>video<span class="op">/</span>night3.mp4  <span class="co">#percorso di night3-rain</span></span></code></pre></div>
+</div>
+<div class="cell code" id="yGoxh7GKYz50">
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>PATH_DAY1 <span class="op">=</span> <span class="ss">f&quot;</span><span class="sc">{</span>HOME<span class="sc">}</span><span class="ss">/video/day1.mp4&quot;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>PATH_DAY2 <span class="op">=</span> <span class="ss">f&quot;</span><span class="sc">{</span>HOME<span class="sc">}</span><span class="ss">/video/day2.mp4&quot;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>PATH_DAY3 <span class="op">=</span> <span class="ss">f&quot;</span><span class="sc">{</span>HOME<span class="sc">}</span><span class="ss">/video/day3.mp4&quot;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>PATH_DAY4 <span class="op">=</span> <span class="ss">f&quot;</span><span class="sc">{</span>HOME<span class="sc">}</span><span class="ss">/video/day4.mp4&quot;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>PATH_NIGHT1 <span class="op">=</span> <span class="ss">f&quot;</span><span class="sc">{</span>HOME<span class="sc">}</span><span class="ss">/video/night1.mp4&quot;</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>PATH_NIGHT2 <span class="op">=</span> <span class="ss">f&quot;</span><span class="sc">{</span>HOME<span class="sc">}</span><span class="ss">/video/night2.mp4&quot;</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>PATH_NIGHT3 <span class="op">=</span> <span class="ss">f&quot;</span><span class="sc">{</span>HOME<span class="sc">}</span><span class="ss">/video/night3.mp4&quot;</span></span></code></pre></div>
+</div>
+<div class="cell markdown" id="8T60QFWiMvw-">
+<p><strong>Punti</strong> 'linea counting' dei video</p>
+</div>
+<div class="cell code" id="L31u0p2PJPpu">
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>punti_day1   <span class="op">=</span> {<span class="st">&#39;SX&#39;</span> : <span class="dv">100</span>, <span class="st">&#39;SY&#39;</span> : <span class="dv">750</span>, <span class="st">&#39;EX&#39;</span> : <span class="dv">1920</span>, <span class="st">&#39;EY&#39;</span> : <span class="dv">750</span>}</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>punti_day2   <span class="op">=</span> {<span class="st">&#39;SX&#39;</span> : <span class="dv">400</span>, <span class="st">&#39;SY&#39;</span> : <span class="dv">750</span>, <span class="st">&#39;EX&#39;</span> : <span class="dv">1650</span>, <span class="st">&#39;EY&#39;</span> : <span class="dv">750</span>}</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>punti_day3   <span class="op">=</span> {<span class="st">&#39;SX&#39;</span> : <span class="dv">0</span>  , <span class="st">&#39;SY&#39;</span> : <span class="dv">770</span>, <span class="st">&#39;EX&#39;</span> : <span class="dv">1920</span>, <span class="st">&#39;EY&#39;</span> : <span class="dv">770</span>}</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>punti_day4   <span class="op">=</span> {<span class="st">&#39;SX&#39;</span> : <span class="dv">150</span>, <span class="st">&#39;SY&#39;</span> : <span class="dv">800</span>, <span class="st">&#39;EX&#39;</span> : <span class="dv">1650</span>, <span class="st">&#39;EY&#39;</span> : <span class="dv">800</span>}</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>punti_night1 <span class="op">=</span> {<span class="st">&#39;SX&#39;</span> : <span class="dv">125</span>, <span class="st">&#39;SY&#39;</span> : <span class="dv">800</span>, <span class="st">&#39;EX&#39;</span> : <span class="dv">1920</span>, <span class="st">&#39;EY&#39;</span> : <span class="dv">800</span>}</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>punti_night2 <span class="op">=</span> {<span class="st">&#39;SX&#39;</span> : <span class="dv">250</span>, <span class="st">&#39;SY&#39;</span> : <span class="dv">650</span>, <span class="st">&#39;EX&#39;</span> : <span class="dv">1600</span>, <span class="st">&#39;EY&#39;</span> : <span class="dv">650</span>}</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>punti_night3 <span class="op">=</span> {<span class="st">&#39;SX&#39;</span> : <span class="dv">280</span>, <span class="st">&#39;SY&#39;</span> : <span class="dv">800</span>, <span class="st">&#39;EX&#39;</span> : <span class="dv">1600</span>, <span class="st">&#39;EY&#39;</span> : <span class="dv">800</span>}</span></code></pre></div>
+</div>
+<div class="cell code" id="aPkkpLWZM5g_">
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>dizionarioVideo <span class="op">=</span> {<span class="st">&#39;video1&#39;</span> : [PATH_DAY1,punti_day1],</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&#39;video2&#39;</span> : [PATH_DAY2,punti_day2],</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&#39;video3&#39;</span> : [PATH_DAY3,punti_day3],</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&#39;video4&#39;</span> : [PATH_DAY4,punti_day4],</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&#39;video5&#39;</span> : [PATH_NIGHT1,punti_night1],</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&#39;video6&#39;</span> : [PATH_NIGHT2,punti_night2],</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>                   <span class="st">&#39;video7&#39;</span> : [PATH_NIGHT3,punti_night3],}</span></code></pre></div>
+</div>
+<div class="cell markdown" id="ca2KBpeLM1Cv">
+<p>#2.2) Cambia qui il percorso del video</p>
+</div>
+<div class="cell code" id="MzdPRAqaQjC9">
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>video <span class="op">=</span> dizionarioVideo[<span class="st">&#39;video1&#39;</span>] <span class="co">#cambia qui il video</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>SOURCE_VIDEO_PATH <span class="op">=</span> video[<span class="dv">0</span>]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>CORD_LINES <span class="op">=</span> video[<span class="dv">1</span>]</span></code></pre></div>
+</div>
+<div class="cell markdown" id="fC0Jy69lDL1Q">
+<p>#<strong>3)</strong> <strong>Track and Count Objects Using
+YOLOv8</strong></p>
+</div>
+<div class="cell markdown" id="juAZ4yArYyJJ">
+<p>#3.1) Predict and annotate single frame</p>
+</div>
+<section
+id="costruzione-di-una-pipeline-di-inferenza-personalizzata-con-supervision-per-un-singolo-frame"
+class="cell markdown" id="WPUWNtg1YynA">
+<h3>Costruzione di una pipeline di inferenza personalizzata con
+Supervision per un singolo frame</h3>
+</section>
+<div class="cell code" id="edfAMpRhYy-5">
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dict maping class_id to class_name</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>CLASS_NAMES_DICT <span class="op">=</span> model.model.names</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># class_ids of interest - car, motorcycle, bus and truck</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>CLASS_ID <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>] <span class="co">#2: &#39;car&#39;, 3: &#39;motorcycle&#39;, 5: &#39;bus&#39;, 7: &#39;truck&#39;</span></span></code></pre></div>
+</div>
+<div class="cell code" id="AjxNiFYJYzX5">
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create frame generator</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>generator <span class="op">=</span> get_video_frames_generator(SOURCE_VIDEO_PATH)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># create instance of BoxAnnotator</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>box_annotator <span class="op">=</span> BoxAnnotator(color<span class="op">=</span>ColorPalette(), thickness<span class="op">=</span><span class="dv">2</span>, text_thickness<span class="op">=</span><span class="dv">2</span>, text_scale<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># acquire first video frame</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>iterator <span class="op">=</span> <span class="bu">iter</span>(generator)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>frame <span class="op">=</span> <span class="bu">next</span>(iterator)     <span class="co">#print(type(frame)) --&gt; &lt;class numpy.ndarray&gt;</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co"># model prediction on single frame and conversion to supervision Detections</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> model(frame)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>detections <span class="op">=</span> Detections(</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    xyxy<span class="op">=</span>results[<span class="dv">0</span>].boxes.xyxy.cpu().numpy(),</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    confidence<span class="op">=</span>results[<span class="dv">0</span>].boxes.conf.cpu().numpy(),</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>    class_id<span class="op">=</span>results[<span class="dv">0</span>].boxes.cls.cpu().numpy().astype(<span class="bu">int</span>)</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="co"># format custom labels</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f&quot;</span><span class="sc">{</span>CLASS_NAMES_DICT[class_id]<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>confidence<span class="sc">:0.2f}</span><span class="ss">&quot;</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _, confidence, class_id, tracker_id</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">in</span> detections</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="co"># annotate and display frame</span></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>frame <span class="op">=</span> box_annotator.annotate(frame<span class="op">=</span>frame, detections<span class="op">=</span>detections, labels<span class="op">=</span>labels)</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>show_frame_in_notebook(frame, (<span class="dv">12</span>, <span class="dv">12</span>))</span></code></pre></div>
+</div>
+<div class="cell markdown" id="SpY9bjNSIe72">
+<p>Verifica dei punti per disegnare la linea</p>
+</div>
+<div class="cell code" id="AaIQFfUnLNP2">
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>temp_image_path <span class="op">=</span> <span class="st">&#39;temp_image.png&#39;</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>cv2.imwrite(temp_image_path, frame)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> cv2.imread(temp_image_path)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>image_rgb <span class="op">=</span> cv2.cvtColor(image, cv2.COLOR_BGR2RGB)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>start_point <span class="op">=</span> (CORD_LINES[<span class="st">&#39;SX&#39;</span>], CORD_LINES[<span class="st">&#39;SY&#39;</span>])</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>end_point <span class="op">=</span> (CORD_LINES[<span class="st">&#39;EX&#39;</span>],CORD_LINES[<span class="st">&#39;EY&#39;</span>])</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">255</span>, <span class="dv">0</span>)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>thickness <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>cv2.line(image_rgb, start_point, end_point, color, thickness)</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>plt.imshow(image_rgb)</span></code></pre></div>
+</div>
+<div class="cell markdown" id="ngKz0kTmYcOb">
+<p>#3.2) Predict and annotate whole video</p>
+</div>
+<section
+id="321-costruzione-di-una-pipeline-di-inferenza-personalizzata-per-un-video-intero-tracciamento-dei-detections-e-conteggio-dei-veicoli-che-attraversano-la-linea-con-supervision"
+class="cell markdown" id="N-PFVq1SYgbq">
+<h3>3.2.1) Costruzione di una pipeline di inferenza personalizzata per
+un video intero, tracciamento dei detections e conteggio dei veicoli che
+attraversano la linea con Supervision</h3>
+</section>
+<div class="cell code" id="IBjTdrf5tDug">
+<div class="sourceCode" id="cb20"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> getTargetVideoPath(sourceVideoPath):</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  targetVideoPath <span class="op">=</span> sourceVideoPath[:<span class="dv">14</span>] <span class="op">+</span> <span class="st">&#39;/result&#39;</span> <span class="op">+</span> sourceVideoPath[<span class="dv">14</span>:]</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  targetVideoPath <span class="op">=</span> targetVideoPath.replace(<span class="st">&#39;.mp4&#39;</span>,<span class="st">&#39;-predict.mp4&#39;</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> targetVideoPath</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  end</span></code></pre></div>
+</div>
+<div class="cell code" id="H1DZKKQbYjt_">
+<div class="sourceCode" id="cb21"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># settings</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>LINE_START <span class="op">=</span> Point(CORD_LINES[<span class="st">&#39;SX&#39;</span>], CORD_LINES[<span class="st">&#39;SY&#39;</span>])</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>LINE_END <span class="op">=</span> Point(CORD_LINES[<span class="st">&#39;EX&#39;</span>],CORD_LINES[<span class="st">&#39;EY&#39;</span>])</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>TARGET_VIDEO_PATH <span class="op">=</span> getTargetVideoPath(SOURCE_VIDEO_PATH)</span></code></pre></div>
+</div>
+<div class="cell code" id="UQeDOPI5Ylzx">
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>VideoInfo.from_video_path(SOURCE_VIDEO_PATH)</span></code></pre></div>
+</div>
+<div class="cell code" id="0sg1L6BjEFMO">
+<div class="sourceCode" id="cb23"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm.notebook <span class="im">import</span> tqdm</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># create BYTETracker instance</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>byte_tracker <span class="op">=</span> BYTETracker(BYTETrackerArgs())</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># create VideoInfo instance</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>video_info <span class="op">=</span> VideoInfo.from_video_path(SOURCE_VIDEO_PATH)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co"># create frame generator</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>generator <span class="op">=</span> get_video_frames_generator(SOURCE_VIDEO_PATH)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="co"># create LineCounter instance</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>line_counter <span class="op">=</span> LineCounter(start<span class="op">=</span>LINE_START, end<span class="op">=</span>LINE_END)</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co"># create instance of BoxAnnotator and LineCounterAnnotator</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>box_annotator <span class="op">=</span> BoxAnnotator(color<span class="op">=</span>ColorPalette(), thickness<span class="op">=</span><span class="dv">1</span>, text_thickness<span class="op">=</span><span class="dv">1</span>, text_scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>line_annotator <span class="op">=</span> LineCounterAnnotator(thickness<span class="op">=</span><span class="dv">1</span>, text_thickness<span class="op">=</span><span class="dv">2</span>, text_scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="co"># open target video file</span></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> VideoSink(TARGET_VIDEO_PATH, video_info) <span class="im">as</span> sink:</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># loop over video frames</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> frame <span class="kw">in</span> tqdm(generator, total<span class="op">=</span>video_info.total_frames):</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># model prediction on single frame and conversion to supervision Detections</span></span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>        results <span class="op">=</span> model(frame)</span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>        detections <span class="op">=</span> Detections(</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>            xyxy<span class="op">=</span>results[<span class="dv">0</span>].boxes.xyxy.cpu().numpy(),</span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>            confidence<span class="op">=</span>results[<span class="dv">0</span>].boxes.conf.cpu().numpy(),</span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>            class_id<span class="op">=</span>results[<span class="dv">0</span>].boxes.cls.cpu().numpy().astype(<span class="bu">int</span>)</span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>        <span class="co"># filtering out detections with unwanted classes</span></span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>        mask <span class="op">=</span> np.array([class_id <span class="kw">in</span> CLASS_ID <span class="cf">for</span> class_id <span class="kw">in</span> detections.class_id], dtype<span class="op">=</span><span class="bu">bool</span>)</span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>        detections.<span class="bu">filter</span>(mask<span class="op">=</span>mask, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a>        <span class="co"># tracking detections</span></span>
+<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a>        tracks <span class="op">=</span> byte_tracker.update(</span>
+<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a>            output_results<span class="op">=</span>detections2boxes(detections<span class="op">=</span>detections),</span>
+<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a>            img_info<span class="op">=</span>frame.shape,</span>
+<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a>            img_size<span class="op">=</span>frame.shape</span>
+<span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a>        tracker_id <span class="op">=</span> match_detections_with_tracks(detections<span class="op">=</span>detections, tracks<span class="op">=</span>tracks)</span>
+<span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a>        detections.tracker_id <span class="op">=</span> np.array(tracker_id)</span>
+<span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a>        <span class="co"># filtering out detections without trackers</span></span>
+<span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a>        mask <span class="op">=</span> np.array([tracker_id <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="cf">for</span> tracker_id <span class="kw">in</span> detections.tracker_id], dtype<span class="op">=</span><span class="bu">bool</span>)</span>
+<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a>        detections.<span class="bu">filter</span>(mask<span class="op">=</span>mask, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb23-40"><a href="#cb23-40" aria-hidden="true" tabindex="-1"></a>        <span class="co"># format custom labels</span></span>
+<span id="cb23-41"><a href="#cb23-41" aria-hidden="true" tabindex="-1"></a>        labels <span class="op">=</span> [</span>
+<span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f&quot;#</span><span class="sc">{</span>tracker_id<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>CLASS_NAMES_DICT[class_id]<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>confidence<span class="sc">:0.2f}</span><span class="ss">&quot;</span></span>
+<span id="cb23-43"><a href="#cb23-43" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> _, confidence, class_id, tracker_id</span>
+<span id="cb23-44"><a href="#cb23-44" aria-hidden="true" tabindex="-1"></a>            <span class="kw">in</span> detections</span>
+<span id="cb23-45"><a href="#cb23-45" aria-hidden="true" tabindex="-1"></a>        ]</span>
+<span id="cb23-46"><a href="#cb23-46" aria-hidden="true" tabindex="-1"></a>        <span class="co"># updating line counter</span></span>
+<span id="cb23-47"><a href="#cb23-47" aria-hidden="true" tabindex="-1"></a>        line_counter.update(detections<span class="op">=</span>detections)</span>
+<span id="cb23-48"><a href="#cb23-48" aria-hidden="true" tabindex="-1"></a>        <span class="co"># annotate and display frame</span></span>
+<span id="cb23-49"><a href="#cb23-49" aria-hidden="true" tabindex="-1"></a>        frame <span class="op">=</span> box_annotator.annotate(frame<span class="op">=</span>frame, detections<span class="op">=</span>detections, labels<span class="op">=</span>labels)</span>
+<span id="cb23-50"><a href="#cb23-50" aria-hidden="true" tabindex="-1"></a>        line_annotator.annotate(frame<span class="op">=</span>frame, line_counter<span class="op">=</span>line_counter)</span>
+<span id="cb23-51"><a href="#cb23-51" aria-hidden="true" tabindex="-1"></a>        sink.write_frame(frame)</span></code></pre></div>
+</div>
+<div class="cell markdown" id="o3K2w2KNFCgj">
+<p>Salvataggio video nella cartella drive specificando il percorso del
+proprio drive</p>
+</div>
+<div class="cell code" id="gpH_3DRRvbhN">
+<div class="sourceCode" id="cb24"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Con questo percorso il video viene salvato nel drive condiviso &#39;Progetto V&amp;P&#39; e può essere visualizzato nella cartella video</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>destination_folder <span class="op">=</span> <span class="st">&#39;/content/drive/Shareddrives/Progetto V&amp;P/Video/predict/generale/&#39;</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>shutil.copy(TARGET_VIDEO_PATH, destination_folder)</span></code></pre></div>
+</div>
+<div class="cell markdown" id="A9yTfWxQxfgl">
+<p><a
+href="https://drive.google.com/drive/u/0/folders/16LPi6KCjo5Ec_zKg3ncgdhVD7qMk99HK">Cartella
+drive con il video realizzato</a></p>
+</div>
+<section
+id="322-costruzione-di-una-pipeline-di-inferenza-personalizzata-per-un-video-intero-tracciamento-dei-detections-e-conteggio-degli-oggetti-che-attraversano-la-linea-con-supervision-suddivisi-in-base-alla-classe_id-alla-quale-appartengono"
+class="cell markdown" id="xxZOIfj3EkJJ">
+<h3>3.2.2) Costruzione di una pipeline di inferenza personalizzata per
+un video intero, tracciamento dei detections e conteggio degli oggetti
+che attraversano la linea con Supervision, <strong>suddivisi in base
+alla classe_id alla quale appartengono</strong></h3>
+</section>
+<div class="cell code" id="U3s9VA3wF8nI">
+<div class="sourceCode" id="cb25"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> getTargetVideoPath(sourceVideoPath):</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  targetVideoPath <span class="op">=</span> sourceVideoPath[:<span class="dv">14</span>] <span class="op">+</span> <span class="st">&#39;/result/per_casistiche&#39;</span> <span class="op">+</span> sourceVideoPath[<span class="dv">14</span>:]</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  targetVideoPath <span class="op">=</span> targetVideoPath.replace(<span class="st">&#39;.mp4&#39;</span>,<span class="st">&#39;-predict.mp4&#39;</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> targetVideoPath</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  end</span></code></pre></div>
+</div>
+<div class="cell code" id="Pv-JYVErF9X8">
+<div class="sourceCode" id="cb26"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># settings</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>LINE_START <span class="op">=</span> Point(CORD_LINES[<span class="st">&#39;SX&#39;</span>], CORD_LINES[<span class="st">&#39;SY&#39;</span>])</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>LINE_END <span class="op">=</span> Point(CORD_LINES[<span class="st">&#39;EX&#39;</span>],CORD_LINES[<span class="st">&#39;EY&#39;</span>])</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>TARGET_VIDEO_CATEGORY_PATH <span class="op">=</span> getTargetVideoPath(SOURCE_VIDEO_PATH)</span></code></pre></div>
+</div>
+<div class="cell code" id="lYMKsxLXGGp3">
+<div class="sourceCode" id="cb27"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>VideoInfo.from_video_path(SOURCE_VIDEO_PATH)</span></code></pre></div>
+</div>
+<div class="cell code" id="H04XTbsZyhJH">
+<div class="sourceCode" id="cb28"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm.notebook <span class="im">import</span> tqdm</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># create BYTETracker instance</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>byte_tracker <span class="op">=</span> BYTETracker(BYTETrackerArgs())</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># create VideoInfo instance</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>video_info <span class="op">=</span> VideoInfo.from_video_path(SOURCE_VIDEO_PATH)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co"># create frame generator</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>generator <span class="op">=</span> get_video_frames_generator(SOURCE_VIDEO_PATH)</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="co"># create LineCounter instances</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>line_counter_car <span class="op">=</span> LineCounterCar(start<span class="op">=</span>LINE_START, end<span class="op">=</span>LINE_END)</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>line_counter_moto <span class="op">=</span> LineCounterMoto(start<span class="op">=</span>LINE_START, end<span class="op">=</span>LINE_END)</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>line_counter_bus <span class="op">=</span> LineCounterBus(start<span class="op">=</span>LINE_START, end<span class="op">=</span>LINE_END)</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>line_counter_truck <span class="op">=</span> LineCounterTruck(start<span class="op">=</span>LINE_START, end<span class="op">=</span>LINE_END)</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co"># create instance of BoxAnnotator and instances of LineCounterAnnotator</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>box_annotator <span class="op">=</span> BoxAnnotator(color<span class="op">=</span>ColorPalette(), thickness<span class="op">=</span><span class="dv">1</span>, text_thickness<span class="op">=</span><span class="dv">1</span>, text_scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>line_annotator_car <span class="op">=</span> LineCounterAnnotatorCar(thickness<span class="op">=</span><span class="dv">2</span>, text_thickness<span class="op">=</span><span class="dv">2</span>, text_scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>line_annotator_moto <span class="op">=</span> LineCounterAnnotatorMoto(thickness<span class="op">=</span><span class="dv">2</span>, text_thickness<span class="op">=</span><span class="dv">2</span>, text_scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>line_annotator_bus <span class="op">=</span> LineCounterAnnotatorBus(thickness<span class="op">=</span><span class="dv">2</span>, text_thickness<span class="op">=</span><span class="dv">2</span>, text_scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>line_annotator_truck <span class="op">=</span> LineCounterAnnotatorTruck(thickness<span class="op">=</span><span class="dv">2</span>, text_thickness<span class="op">=</span><span class="dv">2</span>, text_scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a><span class="co"># open target video file</span></span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> VideoSink(TARGET_VIDEO_CATEGORY_PATH, video_info) <span class="im">as</span> sink:</span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># loop over video frames</span></span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> frame <span class="kw">in</span> tqdm(generator, total<span class="op">=</span>video_info.total_frames):</span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>        <span class="co"># model prediction on single frame and conversion to supervision Detections</span></span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>        results <span class="op">=</span> model(frame)</span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a>        detections <span class="op">=</span> Detections(</span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a>            xyxy<span class="op">=</span>results[<span class="dv">0</span>].boxes.xyxy.cpu().numpy(),</span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>            confidence<span class="op">=</span>results[<span class="dv">0</span>].boxes.conf.cpu().numpy(),</span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>            class_id<span class="op">=</span>results[<span class="dv">0</span>].boxes.cls.cpu().numpy().astype(<span class="bu">int</span>)</span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>        <span class="co"># filtering out detections with unwanted classes</span></span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a>        mask <span class="op">=</span> np.array([class_id <span class="kw">in</span> CLASS_ID <span class="cf">for</span> class_id <span class="kw">in</span> detections.class_id], dtype<span class="op">=</span><span class="bu">bool</span>)</span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a>        detections.<span class="bu">filter</span>(mask<span class="op">=</span>mask, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a>        <span class="co"># tracking detections</span></span>
+<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a>        tracks <span class="op">=</span> byte_tracker.update(</span>
+<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a>            output_results<span class="op">=</span>detections2boxes(detections<span class="op">=</span>detections),</span>
+<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a>            img_info<span class="op">=</span>frame.shape,</span>
+<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a>            img_size<span class="op">=</span>frame.shape</span>
+<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a>        tracker_id <span class="op">=</span> match_detections_with_tracks(detections<span class="op">=</span>detections, tracks<span class="op">=</span>tracks)</span>
+<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a>        detections.tracker_id <span class="op">=</span> np.array(tracker_id)</span>
+<span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a>        <span class="co"># filtering out detections without trackers</span></span>
+<span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a>        mask <span class="op">=</span> np.array([tracker_id <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="cf">for</span> tracker_id <span class="kw">in</span> detections.tracker_id], dtype<span class="op">=</span><span class="bu">bool</span>)</span>
+<span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a>        detections.<span class="bu">filter</span>(mask<span class="op">=</span>mask, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a>        <span class="co"># format custom labels</span></span>
+<span id="cb28-47"><a href="#cb28-47" aria-hidden="true" tabindex="-1"></a>        labels <span class="op">=</span> [</span>
+<span id="cb28-48"><a href="#cb28-48" aria-hidden="true" tabindex="-1"></a>            <span class="ss">f&quot;</span><span class="sc">{</span>CLASS_NAMES_DICT[class_id]<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>confidence<span class="sc">:0.2f}</span><span class="ss">&quot;</span></span>
+<span id="cb28-49"><a href="#cb28-49" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> _, confidence, class_id, tracker_id</span>
+<span id="cb28-50"><a href="#cb28-50" aria-hidden="true" tabindex="-1"></a>            <span class="kw">in</span> detections</span>
+<span id="cb28-51"><a href="#cb28-51" aria-hidden="true" tabindex="-1"></a>        ]</span>
+<span id="cb28-52"><a href="#cb28-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-53"><a href="#cb28-53" aria-hidden="true" tabindex="-1"></a>        frame <span class="op">=</span> box_annotator.annotate(frame<span class="op">=</span>frame, detections<span class="op">=</span>detections, labels<span class="op">=</span>labels)</span>
+<span id="cb28-54"><a href="#cb28-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-55"><a href="#cb28-55" aria-hidden="true" tabindex="-1"></a>        <span class="co"># filtering updating line counter car and filtering out detections with class_id = 3, 5, 7</span></span>
+<span id="cb28-56"><a href="#cb28-56" aria-hidden="true" tabindex="-1"></a>        detections_car <span class="op">=</span>  deepcopy(detections)</span>
+<span id="cb28-57"><a href="#cb28-57" aria-hidden="true" tabindex="-1"></a>        mask_car <span class="op">=</span> deepcopy(mask)</span>
+<span id="cb28-58"><a href="#cb28-58" aria-hidden="true" tabindex="-1"></a>        mask_car <span class="op">=</span> np.array([class_id <span class="kw">in</span> [<span class="dv">2</span>] <span class="cf">for</span> class_id <span class="kw">in</span> detections_car.class_id], dtype<span class="op">=</span><span class="bu">bool</span>)</span>
+<span id="cb28-59"><a href="#cb28-59" aria-hidden="true" tabindex="-1"></a>        detections_car.<span class="bu">filter</span>(mask<span class="op">=</span>mask_car, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb28-60"><a href="#cb28-60" aria-hidden="true" tabindex="-1"></a>        line_counter_car.update(detections<span class="op">=</span>detections_car)</span>
+<span id="cb28-61"><a href="#cb28-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-62"><a href="#cb28-62" aria-hidden="true" tabindex="-1"></a>        <span class="co"># filtering updating line counter moto and filtering out detections with class_id = 2, 5, 7</span></span>
+<span id="cb28-63"><a href="#cb28-63" aria-hidden="true" tabindex="-1"></a>        detections_moto <span class="op">=</span>  deepcopy(detections)  <span class="co">#detections</span></span>
+<span id="cb28-64"><a href="#cb28-64" aria-hidden="true" tabindex="-1"></a>        mask_moto <span class="op">=</span> deepcopy(mask)</span>
+<span id="cb28-65"><a href="#cb28-65" aria-hidden="true" tabindex="-1"></a>        mask_moto <span class="op">=</span> np.array([class_id <span class="kw">in</span> [<span class="dv">3</span>] <span class="cf">for</span> class_id <span class="kw">in</span> detections_moto.class_id], dtype<span class="op">=</span><span class="bu">bool</span>)</span>
+<span id="cb28-66"><a href="#cb28-66" aria-hidden="true" tabindex="-1"></a>        detections_moto.<span class="bu">filter</span>(mask<span class="op">=</span>mask_moto, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb28-67"><a href="#cb28-67" aria-hidden="true" tabindex="-1"></a>        line_counter_moto.update(detections<span class="op">=</span>detections_moto)</span>
+<span id="cb28-68"><a href="#cb28-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-69"><a href="#cb28-69" aria-hidden="true" tabindex="-1"></a>        <span class="co"># filtering updating line counter bus and filtering out detections with class_id = 2, 3, 7</span></span>
+<span id="cb28-70"><a href="#cb28-70" aria-hidden="true" tabindex="-1"></a>        detections_bus <span class="op">=</span>  deepcopy(detections)  <span class="co">#detections</span></span>
+<span id="cb28-71"><a href="#cb28-71" aria-hidden="true" tabindex="-1"></a>        mask_bus <span class="op">=</span> deepcopy(mask)</span>
+<span id="cb28-72"><a href="#cb28-72" aria-hidden="true" tabindex="-1"></a>        mask_bus <span class="op">=</span> np.array([class_id <span class="kw">in</span> [<span class="dv">5</span>] <span class="cf">for</span> class_id <span class="kw">in</span> detections_bus.class_id], dtype<span class="op">=</span><span class="bu">bool</span>)</span>
+<span id="cb28-73"><a href="#cb28-73" aria-hidden="true" tabindex="-1"></a>        detections_bus.<span class="bu">filter</span>(mask<span class="op">=</span>mask_bus, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb28-74"><a href="#cb28-74" aria-hidden="true" tabindex="-1"></a>        line_counter_bus.update(detections<span class="op">=</span>detections_bus)</span>
+<span id="cb28-75"><a href="#cb28-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-76"><a href="#cb28-76" aria-hidden="true" tabindex="-1"></a>        <span class="co"># filtering updating line counter truck and filtering out detections with class_id = 2, 3, 5</span></span>
+<span id="cb28-77"><a href="#cb28-77" aria-hidden="true" tabindex="-1"></a>        detections_truck <span class="op">=</span> deepcopy(detections)</span>
+<span id="cb28-78"><a href="#cb28-78" aria-hidden="true" tabindex="-1"></a>        mask_truck <span class="op">=</span> deepcopy(mask)</span>
+<span id="cb28-79"><a href="#cb28-79" aria-hidden="true" tabindex="-1"></a>        mask_truck <span class="op">=</span> np.array([class_id <span class="kw">in</span> [<span class="dv">7</span>] <span class="cf">for</span> class_id <span class="kw">in</span> detections_truck.class_id], dtype<span class="op">=</span><span class="bu">bool</span>)</span>
+<span id="cb28-80"><a href="#cb28-80" aria-hidden="true" tabindex="-1"></a>        detections_truck.<span class="bu">filter</span>(mask<span class="op">=</span>mask_truck, inplace <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb28-81"><a href="#cb28-81" aria-hidden="true" tabindex="-1"></a>        line_counter_truck.update(detections<span class="op">=</span>detections_truck)</span>
+<span id="cb28-82"><a href="#cb28-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-83"><a href="#cb28-83" aria-hidden="true" tabindex="-1"></a>        <span class="co"># annotate and display frame</span></span>
+<span id="cb28-84"><a href="#cb28-84" aria-hidden="true" tabindex="-1"></a>        line_annotator_car.annotateCar(frame<span class="op">=</span>frame, line_counter_car<span class="op">=</span>line_counter_car)</span>
+<span id="cb28-85"><a href="#cb28-85" aria-hidden="true" tabindex="-1"></a>        line_annotator_moto.annotateMoto(frame<span class="op">=</span>frame, line_counter_moto<span class="op">=</span>line_counter_moto)</span>
+<span id="cb28-86"><a href="#cb28-86" aria-hidden="true" tabindex="-1"></a>        line_annotator_bus.annotateBus(frame<span class="op">=</span>frame, line_counter_bus<span class="op">=</span>line_counter_bus)</span>
+<span id="cb28-87"><a href="#cb28-87" aria-hidden="true" tabindex="-1"></a>        line_annotator_truck.annotateTruck(frame<span class="op">=</span>frame, line_counter_truck<span class="op">=</span>line_counter_truck)</span>
+<span id="cb28-88"><a href="#cb28-88" aria-hidden="true" tabindex="-1"></a>        sink.write_frame(frame)</span></code></pre></div>
+</div>
+<div class="cell markdown" id="eK3z-TFtBx68">
+<p>Salvataggio video nella cartella drive</p>
+</div>
+<div class="cell code" id="VjsVPoYOwItf">
+<div class="sourceCode" id="cb29"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Con questo percorso il video viene salvato nel drive condiviso &#39;Progetto V&amp;P&#39; e può essere visualizzato nella cartella video</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>destination_folder <span class="op">=</span> <span class="st">&#39;/content/drive/Shareddrives/Progetto V&amp;P/Video/predict/categorie/&#39;</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>shutil.copy(TARGET_VIDEO_CATEGORY_PATH, destination_folder)</span></code></pre></div>
+</div>
+<div class="cell markdown" id="PiDOQPOXwWus">
+<p><a
+href="https://drive.google.com/drive/u/0/folders/166-pnjjHR7Hbce5EWeJq9bJYAmHB9coH">Cartella
+drive con il video realizzato</a></p>
+</div>
+</body>
+</html>

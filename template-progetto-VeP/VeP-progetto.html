@@ -30,10 +30,10 @@
     <!-- ******HEADER****** --> 
     <header class="header">
         <div class="container">                       
-            <img class="profile-image img-responsive pull-left" src="img.png" alt="Inserire immagine qui" hegiht="500" width="500">
+            <img class="profile-image img-responsive pull-left" src="immagini/img.png" alt="Inserire immagine qui" width="350">
             <div class="profile-content pull-left">
-                <h1 class="name">VEHICLE TRACKING AND COUNTING USING YOLOV8, BYTETRACK & SUPERVISION</h1>
-                <h2 class="desc"></h2>
+                <h1 class="name">Vehicle tracking and counting </h1>
+                <h2 class="desc">Using YoloV8, ByteTrack & Supervision</h2>
             </div>
 
             <div class="profile-content pull-right">
@@ -63,9 +63,18 @@
                         <div class="content">
                             <p>
                                 Nel progetto realizzato si vuole proporre un sistema di rilevamento e conteggio di veicoli in transito su un'autostrada, in varie condizioni metereologiche.
-                                Il sistema proposto fa uso di Yolov8 per il rilevamento dei veicoli autostradali ripresi da un cavalcavia, ByteTrack per il
-                                loro tracciamento e l'ultima libreria Python di Roboflow - Supervision, per il conteggio dei
+                                Per risolvere questo problema, proponiamo un framework per il
+                                conteggio, la classificazione e il rilevamento dei veicoli. Nel sistema proposto utilizziamo
+                                <b>Yolov8</b> per il rilevamento dei veicoli autostradali ripresi da un cavalcavia, <b>ByteTrack</b> per il
+                                loro tracciamento e l'ultima libreria Python di <b>Roboflow</b> - Supervision per il conteggio dei
                                 veicoli.
+                                Il problema da risolvere consiste nel rilevare e contare 4 tipologie di veicoli in transito lungo due direzioni.
+                                <ul>
+                                    <li>Automobili</li>
+                                    <li>Motocicli</li>
+                                    <li>Mezzi pesanti</li>
+                                    <li>Autobus</li>
+                                  </ul>
 							</p>
                         </div><!--//content-->
                     </div><!--//section-inner-->                 
@@ -76,10 +85,16 @@
                         <h2 class="heading">Motivazioni</h2>
                         <div class="content">
                             <p>
-                                Il conteggio di oggetti in movimento e' uno dei casi d'uso piu' popolari nella visione artificiale
+                                Il conteggio di oggetti in movimento è uno dei casi d'uso più popolari nella visione artificiale
                                 (CV). Viene utilizzato, tra l'altro, nell'analisi del traffico e come parte dell'automazione dei
-                                processi di produzione. 
+                                processi di produzione.
+                                In ogni caso, a causa delle diverse dimensioni dei veicoli,
+                                la loro identificazione rimane un test che influenza direttamente l'esattezza dei
+                                conteggi dei veicoli. 
 							</p>
+                            <div style="text-align: center;">
+                                <img src="immagini/day1.png" alt="YOLOv8: state-of-the-art model" width="800">
+                            </div>
 							
                         </div><!--//content-->
                     </div><!--//section-inner-->                 
@@ -91,7 +106,9 @@
                         <div class="content">
                             <p>
                                 Descrizione degli obiettivi del progetto :
-                                Conteggio e rilevamento in entrata e in uscita di : car, truck, motorcycle, bus. 
+                                Generazione di un video che mostra il processo di detection and counting. Il conteggio dovrà essere incrementato ogni qual volta un veicolo superi la linea di demarcazione.
+                                Il risultato particolarizzato per tipologia verrà mostrato a video in tempo reale.
+                                Il sistema deve essere robusto a varie condizioni atmosferiche e metereologiche, nonchè di scarsa illuminazione.
                             </p>
 							<p>
 							<ol>
@@ -109,13 +126,108 @@
                     <div class="section-inner">
                         <h2 class="heading"><a id="dataset"></a>Metodo</h2>
                         <div class="content">
-                            <p>Descrivere il procedimento utilizzato per risolvere il problema,
-							evidenziando quali algoritmi noti sono stati utilizzati
+                        <p>
                         Per risolvere il problema abbiamo implemetato il codice della libreria Supervision di Roboflow. In particolare abbiamo realizzato le classi che effettuano il conteggio delle singole categorie.
                         Come primo step ci siamo concentrati sul rilevamento dei veicoli.
                         La rete utilizzata per il rilevamento e' l'ultima versione di Yolo ovvero YOLOV8.
                         Successivamente abbiamo aggiunto il modulo per il tracciamento operato da ByteTrack.
                         Infine per il conteggio dei veicoli abbiamo usato le classi create ed inserite nel branch svUnibas di Supervision.
+                        </p>
+                        <h3>Yolov8</h3>
+                        <p>La serie di modelli YOLO <i>(You Only Look Once)</i> è diventata famosa nel mondo della visione
+                        artificiale. La fama di <i>YOLO</i> è attribuibile alla sua notevole precisione pur mantenendo una
+                        piccola dimensione del modello. Questi modelli possono essere addestrati su una singola
+                        GPU, il che li rende accessibili a una vasta gamma di sviluppatori. I professionisti del
+                        machine learning possono implementarlo per hardware edge a basso costo o nel cloud.
+                        YOLO è stato apprezzato dalla comunità della computer vision sin dal suo primo lancio nel
+                        2015 da <i>Joseph Redmond</i>. All'inizio (versioni 1-4), YOLO veniva mantenuto in codice C in
+                        un framework di deep learning personalizzato scritto da Redmond chiamato Darknet.
+                        Il campo della visione artificiale avanza con il rilascio del 10 gennaio 2023 di <i>YoloV8</i> [1], un
+                        modello all'avanguardia che definisce un nuovo stato dell'arte per il rilevamento di oggetti, la
+                        classificazione delle immagini e le attività di segmentazione delle istanze. Insieme ai
+                        miglioramenti all'architettura del modello stesso, <i>Yolov8</i> introduce gli sviluppatori in una
+                        nuova interfaccia intuitiva tramite un pacchetto PIP per l'utilizzo del modello YOLO.
+                        <i>YoloV8</i> è stato sviluppato da <i>Ultralytics</i>, che ha anche creato l'influente modello <i>YoloV5</i>
+                        che definisce il settore; include numerose modifiche e miglioramenti dell'architettura e
+                        dell'esperienza degli sviluppatori rispetto a <i>YoloV5</i>.
+                        <i>YoloV8</i> è in fase di sviluppo attivo al momento della stesura di questo di questa tesina,
+                        poiché Ultralytics lavora su nuove funzionalità e risponde al feedback della community.
+                        Infatti, quando Ultralytics rilascia un modello, gode di un supporto a lungo termine:
+                        l'organizzazione collabora con la comunità per rendere il modello il migliore possibile.</p>
+                        <div style="text-align: center;">
+                            <p></p>
+                            <img src="immagini/prestazioniYolov8.png" width="600">
+                            <figcaption><b><i>YOLOv8: state-of-the-art model</i></b></figcaption>
+                            <p></p>
+                        </div>  
+                        
+                        <h3>ByteTrack</h3>
+                        <p>
+                            Il <i>Multiple Object Tracking</i> (MOT) è un'attività di computer vision che prevede il tracciamento
+                            dei movimenti di più oggetti nel tempo in una sequenza video. L'obiettivo è determinare
+                            l'identità, la posizione e la traiettoria di ciascun oggetto nel video, anche nei casi in cui gli
+                            oggetti sono parzialmente o completamente occlusi da altri oggetti nella scena. Il MOT è un
+                            problema importante nella computer vision, in quanto ha numerose applicazioni pratiche.
+                            In generale, il tracciamento di oggetti multipli avviene in due fasi: il rilevamento degli oggetti
+                            e l'associazione degli oggetti. Il rilevamento degli oggetti è il processo di identificazione di
+                            tutti i potenziali oggetti di interesse nel fotogramma corrente, utilizzando rilevatori di oggetti
+                            come <i>Faster-RCNN</i> o <i>YOLO</i>. L'associazione di oggetti è il processo di collegamento tra gli
+                            oggetti rilevati nel fotogramma corrente e gli oggetti corrispondenti dei fotogrammi
+                            precedenti, denominati tracklet. L'associazione dell'oggetto o dell'istanza viene solitamente
+                            eseguita prevedendo la posizione dell'oggetto nel fotogramma corrente in base ai tracklet
+                            dei fotogrammi precedenti, utilizzando il filtro di Kalman, seguito da un'assegnazione lineare
+                            uno-a-uno, in genere utilizzando l'algoritmo ungherese per ridurre al minimo le differenze
+                            totali tra i risultati della corrispondenza.
+                            <div style="text-align: center;">
+                                <p></p>
+                                <img src="immagini\ArchitectureDeepSort.png" width="600">
+                                <figcaption><b><i>DeepSORT Algorithm</i></b></figcaption>
+                                <p></p>
+                            </div>             
+                            Nonostante i numerosi progressi compiuti nel corso degli anni, la MOT rimane un compito
+                            impegnativo. Di seguito sono descritti alcuni problemi critici che hanno impedito prestazioni
+                            di alta qualità e che sono stati la fonte di motivazione per approcci recenti.
+                            Le complicazioni possono derivare dai dati visivi stessi. Ad esempio, il movimento e l'aspetto
+                            di uno stesso oggetto possono variare notevolmente nel corso della sequenza video. Gli
+                            oggetti possono muoversi a velocità e direzioni diverse, cambiare di dimensione o forma e
+                            possono essere parzialmente o completamente occlusi da altri oggetti nella scena. Questi
+                            problemi contribuiscono alle imprecisioni del tracking MOT, come il cambio di ID dell'oggetto
+                            o l'assegnazione di più tracklet allo stesso oggetto.
+                            A livello architettonico, i tracker multiclasse possono incontrare problemi di commutazione di
+                            classe che aggravano i problemi di associazione degli oggetti tra i vari fotogrammi, se il
+                            rilevatore non riesce a classificare accuratamente i riquadri di delimitazione a causa di
+                            problemi di classificazione, come classi simili che confondono il rilevatore. Pertanto,
+                            l'algoritmo di tracking deve essere in grado di gestire queste variazioni e di associare in
+                            modo affidabile ogni oggetto nel fotogramma corrente con l'oggetto corrispondente nel
+                            fotogramma precedente. 
+                            Gli approcci MOT più recenti hanno utilizzato algoritmi complessi basati principalmente sulla
+                            previsione della traiettoria con il filtro di Kalman, seguita dall'associazione di bounding box
+                            con l'algoritmo ungherese. 
+                            Nel progetto in questione, utilizzeremo un tracker semplice ma
+                            potente: <b>ByteTrack</b>[2]. Questo algoritmo mira principalmente a eseguire il tracciamento di
+                            più oggetti, nel caso di studio in esame, di veicoli autostradali.
+                            <i>BYTETrack: Multi-Object Tracking by Associating Every Detection Box è un documento
+                            presentato all'ECCV2022 da Yifu Zhang et al</i>. Grazie alla sua struttura universale e alla
+                            relativa semplicità, è stato adottato da molti ricercatori successivi per i loro tracker MOT
+                            (Bot-SORT, SMILEtrack).
+                            L'innovazione principale di ByteETrack consiste nel mantenere le bounding box di
+                            rilevamento non di sfondo a bassa confidenza, che di solito vengono scartate dopo il
+                            filtraggio iniziale dei rilevamenti, e di utilizzare queste caselle a basso punteggio per una
+                            fase di associazione secondaria. In genere, le caselle di rilevamento occluse hanno punteggi
+                            di confidenza inferiori alla soglia, ma contengono comunque alcune informazioni sugli
+                            oggetti che rendono il loro punteggio di confidenza più alto rispetto alle caselle puramente di
+                            sfondo. Pertanto, queste caselle a bassa confidenza sono ancora significative da tenere
+                            sotto controllo durante la fase di associazione.   
+                        </p>
+                        <h3>Supervision</h3>
+                        <p>Con il supporto della libreria python <b>Supervision</b>[3] di Roboflow, (piattaforma di computer
+                            vision che consente agli utenti di costruire modelli di computer vision in modo più rapido e
+                            accurato grazie a migliori tecniche di raccolta dati, pre-elaborazione e formazione dei
+                            modelli), è stato possibile rilevare e contare senza problemi gli oggetti in base alle rispettive
+                            regioni o zone. L'algoritmo YOLOv8 aiuta a rilevare e classificare gli oggetti, ma se
+                            combinato con la libreria di supervisione, possiamo anche specificare con precisione la
+                            regione o la zona dell'oggetto.
+                            </p>
                         </p>		                         
                         </div><!--//content-->
                     </div><!--//section-inner-->                 
@@ -125,8 +237,7 @@
                     <div class="section-inner">
                         <h2 class="heading"><a id="dataset"></a>Implementazione e Codice</h2>
                         <div class="content">
-                            <p>Descrivere la tecnologia utilizzata per risolvere il problema</p>
-							<p>Per esempio:<br>
+							<p>Le tecnologie utilizzate per risolvere il problema proposto sono:<br>
 							<ul>
 							    <li>Python 3.10.12</li>
 								<li>YOLOv8.0.20</li>
@@ -135,11 +246,212 @@
                                 <li>Supervision 0.1.0</li>							
                             </ul>
 							</p>
-							
-							<p>
-                            <font color="red">https://github.com/manuelecapece/supervision/tree/svUnibas</font><br>
-							</p>
-                                                     
+							<h3><strong>Overview</strong></h3>
+                            <p>L’obiettivo che ci siamo preposti è quello di costruire un <i>'object detection tracking and
+                                counting system'</i> . Utilizzeremo l’ultima versione di Yolo, ovvero <i>YoloV8</i>, per la fase di object
+                                detections, il tracker d’avanguardia <i>ByteTrack</i> per il tracciamento e l’ultima librearia python di
+                                Roboflow chiamata <i>Supervision</i> per il conteggio degli oggetti, nel nostro caso di veicoli
+                                autostradali.
+                                
+                            Il conteggio e rilevamento è stato effettuato su 7 diversi video.
+                            In particolare 4 video diurni(di cui uno in condizioni nevose) e tre video notturni (di cui uno in codizioni piovose).
+                            I video possono essere visualizzati al seguente <a href="https://drive.google.com/drive/folders/14WfbII4iwGSsgf6wKYGVB1xk-lssGtAE?usp=sharing">link</a>
+                            </p>
+                            <h3>Setting up the Python Environment for the vehicle tracking</h3>
+                            <p>
+                            Il primo passo è eseguire <i>'!nvidia-smi'</i> per confermare che abbiamo accesso alla GPU,
+                            perchè i modelli di computer vision funzionano più velocemente se li esegui su una GPU
+                            piuttosto che su una CPU.
+                            Poi creiamo una variabile HOME per rendere più facile la gestione dei percorsi.
+                            I video sui quali effettueremo le predizioni si troveranno nella cartella <i>‘content/video’</i>.
+                            I video col tracciamento e conteggio dei veicoli si troveranno nella cartella
+                            <i>‘content/video/result'</i>, mentre il percorso per con il tracciamento e il conteggio dei veicoli
+                            suddivisi per classi_id si troveranno nel percorso <i>‘content/video/result/per_casistiche’</i>
+                            Ora è possibile installare Yolov8 ma, considerando che l’ultima versione è ancora in fase di
+                            costruzione, è meglio specificare una versione specifica bloccata così da avere un notebook
+                            funzionante con la versione determinata indipendentemente dal momento in cui lo si va ad
+                            eseguire.
+                            Si procede con l’installazione di ByteTrack (0.1.0 version) e della libreria Supervision di
+                            Roboflow (0.1.0 version).
+                            Per apportare le modifiche necessarie al nostro caso di studi abbiamo effettuato una fork del
+                            repository di supervision creando un nuovo branch nominato <b>svUnibas</b>. Le modifiche effettuate mirano alla realizzazione 
+                            delle classi che si occupano del tracking
+                            and counting delle categorie di veicoli di nostro interesse, ovvero: car, bus, track and
+                            motorcycle. Inoltre nel repository git creato si trova anche il Notebook in cui vengono
+                            generati i video del progetto.
+                            La fase successiva è quella riguardante il caricamento del modello pre-addestrato chiamato <i>'yolov8x.pt'</i>.
+                            Infine i video su cui verranno effettuate le inferenze vengono scaricati e salvati sul notebook.
+                            </p>
+                            <h3><b>Using Yolov8 for vehicle detection</b></h3>
+                            <p>
+                            Ora che sono disponibili tutti gli strumenti, possiamo eseguire la CLI di Yolov8 sul video in
+                            questione per constatare se il nostro modello è abbastanza forte è affidabile, con l’istruzione:
+                            <pre><code class="plaintext">!yolo task=detect mode=predict model=yolov8x.pt conf=0.25 source={SOURCE_VIDEO_PATH} save=True</code></pre>
+                            I rilevamenti sembrano essere abbastanza stabili quindi possiamo continuare.
+                            Useremo Supervision per ricreare un ciclo d’inferenza più dettagliato e Yolov8 per eseguire
+                            l’inferenza nel ciclo principale.
+                            </p>
+                            <h3>Building Custom Inference Pipeline with Supervision for a single frame</h3>
+                            <p>
+                            Iniziamo col creare il generatore di frame. Questo è un pezzo di codice che ci permetterà di
+                            leggere i frame dal video uno per uno; quindi, invece di caricarli nello stesso momento in
+                            memoria con una buona probabilità di saturare la RAM velocemente, caricheremo solo un
+                            frame alla volta.
+                            Come primo step svilupperemo una pipeline di inferenza personalizzata con Supervision per
+                            un singolo frame.
+                            Per scegliere un solo frame bisogna innanzitutto creare un iteratore, estrapolare il
+                            fotogramma successivo ed eseguire il modello pre-addestrato sul frame, che restituirà un
+                            elenco di previsioni che associamo alla variabile <i>‘results’</i>.
+                            Se richiamo a results il metodo <i>.boxes.xyxy</i> e faccio una stampa <i>print(results.boxes.xyxy)</i> mi
+                            restituirà il tensore python contenente le posizioni degli oggetti sul frame:
+                            <div style="text-align: center;">
+                                <p></p>
+                                <img src="immagini\tensore.png" width="500">
+                                <figcaption><b><i>tensor python</i></b></figcaption>
+                                <p></p>
+                            </div> 
+                            Possiamo anche vedere le confidence (con valori tra 0 e 1) e le classi degli oggetti rilevati
+                            dal modello nel frame:
+                            <div style="text-align: center;">
+                                <p></p>
+                                <img src="immagini\confidence.png" width="520">
+                                <figcaption><b><i>confidence tensor</i></b></figcaption>
+                                <p></p>
+                            </div> 
+                            <div  style="text-align: center;">  
+                                <p></p>  
+                                <img src="immagini\classes.png" width="400">
+                                <figcaption><b><i>classes tensor</i></b></b></figcaption>
+                                <p></p>
+                            </div> 
+                            Per lavorare con la libreria Supervision dovremo convertire questi tensori in array nunmpy.
+                            Supervision è una libreria generica, perciò bisognerà convertire ciò che otteniamo da Yolov8
+                            in un oggetto che sia comprensibile da Supervision; questi oggetti sono i <i>detections</i>.
+                            <div style="text-align: center;">
+                                <p></p>
+                                <img src="immagini\Detection api.png" width="700">
+                                <figcaption><b><i>detection API</i></b></figcaption>
+                                <p></p>
+                            </div> 
+                            La classe <i>Detections</i> può essere utilizzata per visualizzare i bounding box sul frame; dopo
+                            aver importato le utilità <i>Detections</i> e <i>BoxAnnotator</i> possiamo crearci un’istanza di
+                            delimitazione di BoxAnnotator che prende in input il metodo ><i>ColorPalette()</i> (rappresenta un
+                            insieme di colori usati da quel particolare annotatore).
+                            A questo punto l’unica cosa di cui abbiamo bisogno è annotare il frame richiamando
+                            all’annotatore <i>box_annotaor</i> il metodo <i>.annotate</i> che prende in input il frame non elaborato
+                            (ndarray) e i detections. Se si desidera bounding box più dettagliati, ad esempio stampare
+                            l’id della classe, posso passare un parametro aggiuntivo all’annotatore chiamato ‘labels’.
+                            Considerando che gli esseri umani lavorano meglio con il testo piuttosto che con i numeri, i
+                            modelli Yolov8 contengono proprietà chiamate names: <i>model.model.names</i>
+                            e posso mappare gli ID di classe in quei nomi.
+                            Perciò è stata creata la costante <i>CLASS_NAMES_DICT = model.model.names</i>
+                            potendo così mappare le nostre etichette in labels in modo diverso, stampando il nome della
+                            classe invece che l’id.
+                            </p>
+                            <h3>Building Custom Inference Pipeline with Supervision for a whole video</h3>
+                            <p>
+                                Nella fase successiva si è proceduto a convertire l’elaborazione di un singolo frame
+                                nell’elaborazione dell’intero video, aggiungendo ulteriori livelli di complessità con tracker e
+                                contatore.
+                                Per farlo dobbiamo eseguire un loop sui video frames provenienti da generator. Il modo più
+                                semplice è dichiarare un ciclo for e indentare il codice già scritto. Il codice ottenuto stamperà
+                                tutti i frame che dovremmo salvare sotto forma di video; a tal proposito ci siamo serviti di
+                                un’altra classe di Supervision: <i>VideoSink</i>, specificando il percorso del file di output e l’istanza
+                                della classe VideoInfo (mi restituisce: risoluzione, FPS e quantità totale di frames).
+                                Si indenta un’ulteriore volta il codice scritto sotto la chiamata:    
+                                <pre><code class="plaintext">with VideoSink(TARGET_VIDEO_PATH, video_info) as sink</code></pre>
+                                Rimuoviamo <i>show_frame_in_notebook</i> perchè vogliamo salvare i frame in un video,
+                                sostituendo la riga di codice con:
+                                <pre><code class="plaintext">sink.write_frame(frame)</code></pre>
+                                e quindi sfruttando il metodo <i>write_frame</i> di VideoSink.
+                            </p>
+                            <h3>Tracking Detections with ByteTrack</h3>
+                            <p>
+                                Il principale obiettivo, arrivati a questo punto, è collegare il tracker, già installato
+                                nell’ambiente. Si crea un’istanza:
+                                <pre><code class="plaintext">byte_tracker = BYTETracker(BYTETrackerArgs())</code></pre>
+                                Il tracker <i>BYTETracker</i> accetta argomenti che sono sotto forma di classe python e nel ciclo
+                                for uso questa istanza per acquisire gli ID tracker e fare matching con i detections.
+                                Ora si possono aggiornare le labels includendo non solo l’ID della classe e la confidence,
+                                ma anche l’ID del tracker.
+                                L’ultima fase è quella che riguarda il tracciamento della linea e il conteggio degli oggetti che
+                                l’attraversano completamente.
+                            </p>
+                            <h3>Counting objects crossing the line with Supervision</h3>
+                            <p>I due punti della linea vengono creati come istanze, che abbiamo chiamato <i>LINE_START</i> e
+                                <i>LINE_END</i> della classe Point di Supervision.
+                                Per visualizzare la linea abbiamo bisogno di un altro annotatore che creo come istanza della
+                                classe <i>LineCounterAnnotator</i> di Supervision.
+                                Aggiorniamo la variabile line_counter con l’istruzione:
+                                <pre><code class="plaintext">line_counter.update(detections=detections)</code></pre>
+                                in modo che acquisisca i rilevamenti e determini se è stata attraversata o meno ed infine
+                                annoteremo quella linea mostrando su display l’incremento dei contatori in real-time con
+                                l’istruzione:
+                                <pre><code class="plaintext">line_annotator.annotate(frame=frame, line_counter=line_counter)</code></pre>
+                                Ricordo che i detections che passo in input al line_counter sono stati filtrati attraverso la
+                                creazione di una <i>mask</i> (un ndarray) che seleziona solo le classi_id di nostro interesse,
+                                salvate nella variabile <i>CLASSE_ID</i> :
+                                <pre><code class="plaintext">CLASS_ID = [2, 3, 5, 7] #2: 'car', 3: 'motorcycle', 5: 'bus', 7: 'truck'</code></pre>
+                                effettuando un filtraggio dei detections attraverso il metodo <i>filter</i> della classe Detection:
+<pre><code class="plaintext">mask = np.array([class_id in CLASS_ID for class_id in detections.class_id], dtype=bool)
+detections.filter(mask=mask, inplace=True)</code></pre>
+                            </p>
+                            <h3>Counting objects by categories crossing the line with Supervision</h3>
+                            <p>Un’ulteriore passo è stato quello di effettuare il conteggio dei veicoli autostradali che
+                                attraversano la linea, suddivisi per categoria.
+                                Il metodo impiegato è stato quello di creare 4 script .py inseriti nel percorso
+                                <i>supervision → tools</i> della cartella di progetto, ognuno di questi contenenti le proprie
+                                specifiche classi di LineCounter e LineCounterAnnotator adattate al determinato veicolo
+                                autostradale, che sia esso ‘car’, ‘motorcycle’, ‘bus’ o ‘truck’.
+                                All’interno del notebook sono stati definiti quattro contatori e quattro annotatori di linea come
+                                segue:
+<pre><code class="plaintext"># create LineCounter instances
+line_counter_car = LineCounterCar(start=LINE_START, end=LINE_END)
+line_counter_moto = LineCounterMoto(start=LINE_START, end=LINE_END)
+line_counter_bus = LineCounterBus(start=LINE_START, end=LINE_END)
+line_counter_truck = LineCounterTruck(start=LINE_START, end=LINE_END)
+# create LineCounterAnnotator instances
+line_annotator_car = LineCounterAnnotatorCar(thickness=2, text_thickness=2,text_scale=1)
+line_annotator_moto = LineCounterAnnotatorMoto(thickness=2, text_thickness=2,text_scale=1)
+line_annotator_bus = LineCounterAnnotatorBus(thickness=2, text_thickness=2,text_scale=1)
+line_annotator_truck = LineCounterAnnotatorTruck(thickness=2,text_thickness=2, text_scale=1)</code></pre>
+                                Per aggiornare i contatori di linea specifici per categoria è stata creata, per ognuno di essi,
+                                una deepcopy dell’istanza detections e del ndarray mask (creata precedentemente per
+                                filtrare i rilevamenti delle classi indesiderate).
+                                In seguito viene riportato un pezzo di codice relativo al filtraggio per l’update del contatore di
+                                linea della classe ‘car’:
+<pre><code class="plaintext"># filtering updating line counter car and filtering out detections with class_id = 3, 5, 7
+detections_car = deepcopy(detections)
+mask_car = deepcopy(mask)
+mask_car = np.array([class_id in [2] for class_id in detections_car.class_id], dtype=bool)
+detections_car.filter(mask=mask_car, inplace=True) 
+line_counter_car.update(detections=detections_car)</code></pre>
+                                Infine vengono aggiornati gli annotatori di linea passando in input i rispettivi contatori di
+                                linea:
+<pre><code class="plaintext"># annotate
+line_annotator_car.annotateCar(frame=frame,line_counter_car=line_counter_car)
+line_annotator_moto.annotateMoto(frame=frame,line_counter_moto=line_counter_moto)
+line_annotator_bus.annotateBus(frame=frame,line_counter_bus=line_counter_bus)
+line_annotator_truck.annotateTruck(frame=frame,line_counter_truck=line_counter_truck)
+</code></pre>
+                                
+                            </p>
+                            <h3>GITHUB repo</h3>
+                            <style>
+                                a.red-link {
+                                  color: red;
+                                  text-decoration: none; 
+                                }
+                              </style>
+                              <a href="https://github.com/manuelecapece/VehicleDetecting-VeP-Unibas/tree/svUnibas" class="red-link">https://github.com/manuelecapece/VehicleDetecting-VeP-Unibas/tree/svUnibas</a>           
+                              <h3>Colab notebook</h3>
+                            <iframe src="VeichleCountinghtml.html" style="width:100%; height:800px; margin-bottom: 20px;"></iframe>
+                            <p>
+                                Per il notebook interattivo: <a href="https://colab.research.google.com/drive/1JtN0EHXI1QmFUpT2PCGHAk3Z4Kx4Zfv8?usp=sharing">Google Colab</a>
+                            </p>
+                            <p>
+                                Per tutti i file di progetto: <a href="https://drive.google.com/drive/u/0/folders/0AD87WuG6mw8IUk9PVA" class="red-link">Google Drive</a>          
+                            </p>                           
                         </div><!--//content-->
                     </div><!--//section-inner-->                 
                 </section><!--//section-->
@@ -151,9 +463,14 @@
                         <div class="content">
                             <p>
                                 I dati utilizzati fanno riferimto al modello pre addestrato chiamato 'yolov8x.pt', il link per il download e' il seguente:
-                                https://docs.ultralytics.com/models/yolov8/#supported-modes
+                                <a href="https://docs.ultralytics.com/models/yolov8/#supported-modes" class="red-link">https://docs.ultralytics.com/models/yolov8/#supported-modes</a> 
                             </p>
-                            							
+                            <div style="text-align: center;">
+                                <p></p>
+                                <img src="immagini\performance1yolo.png" width="800">
+                                <figcaption><b><i>YoloV8 detections performance</i></b></figcaption>
+                                <p></p>
+                            </div>       							
                                                      
                         </div><!--//content-->
                     </div><!--//section-inner-->                 
@@ -168,16 +485,68 @@
 							<h3>Risultati qualitativi</h3>
 							<p>I video dei tracking prodotti si trovano nella cartella video/predict del drive condiviso Progetto V&P. 
                                 In particolare sono stati realizzati 7 video 3 in condizioni diurne, 3 in condizioni notturne uno in condizioni di neve.
-                                I risultati dei tracking sono disponibili nella cartella risultati del drive.
+                                I risultati dei tracking sono disponibili nella cartella risultati del drive al seguente <a href="https://drive.google.com/drive/folders/166-pnjjHR7Hbce5EWeJq9bJYAmHB9coH">link</a>
                             </p>
-							
-													
+                            <video style="width:100%; margin-bottom: 15px; margin-top: 15px" controls>
+                                <source src="video\day2-predict.webm" type="video/webm">
+                                prediction
+                            </video>
+                            <video style="width:100%; margin-bottom: 15px; margin-top: 15px" controls>
+                                <source src="video\night1-predict.webm" type="video/webm">
+                                prediction
+                            </video>
 							<h3>Risultati quantitativi</h3>
 							<p>
-                                Per l'analisi dei risultati qualitativi si rimanda al capitolo 4 della tesina allegata.
+                            <h4>Funzionamento diurno</h4>
+                            Per quanto riguarda il funzionamento del modello di detection, in condizioni diurne
+                            quest’ultimo è in grado di rilevare in modo molto efficace i veicoli transitanti sulla carreggiata.
+                            Tuttavia yolov8 a volte confonde i SUV con dei truck, soprattutto se questi sono dotati di
+                            dispositivi portapacchi. Inoltre è anche indeciso sui veicoli pick-up con la quale cambia
+                            decisione più volte durante il loro transito. Questo comportamento è possibile notarlo nel
+                            video <i><b>'day4'</b></i> in cui si nota subito dal grafico che vengono contati più truck di quanti ne
+                            passano realmente.
+                            <div style="text-align: center;">
+                                <p></p>
+                                <img src="immagini\day4result.png" width="600">
+                                <p></p>
+                            </div> 
+                            Inoltre segnaliamo che nel rilevamento dei bus il modelle tende ad essere indeciso se
+                            classificarli come bus oppure truck. Difatti raramente è possibile che venga conteggiato un
+                            bus in entrambe le categorie. Un'ulteriore difficoltà del modello è quella relativa al
+                            rilevamento delle moto.
+                            <div style="text-align: center;">
+                                <p></p>
+                                <img src="immagini\day3result.png" width="600">
+                                <p></p>
+                            </div> 
+                            In particolare nel video <i><b>'day3'</b></i> è possibile notare come la rete non rilevi per nulla le due moto
+                            in entrata e in uscita. Bisogna anche considerare che è una categoria che passa di rado e
+                            quindi ci vorrebbe un video con più moto transitanti per trarre altre conclusioni.
+                            <h4>Funzionamento notturno</h4>
+                            In sostanza i problemi di tracciamento e conteggio che abbiamo riscontrato nelle condizioni
+                            di sole sono le stesse che si possono riscontrare nelle condizioni di buio.
+
+                            Nel caso notturno il problema del rilevamento delle moto è ancora più evidente. In merito a
+                            questo nel video <i><b>'night2'</b></i> delle 5 moto transitanti ne viene contata soltanto una.
+                            <div style="text-align: center;">
+                                <p></p>
+                                <img src="immagini\night2result.png" width="600">
+                                <p></p>
+                            </div> 
+                            I risultati completi di tutti i video prodotti sono disponibili al seguente <a href="https://docs.google.com/spreadsheets/d/14RfqNIPPAjrtdbO80bYc94jBvDCjWd1g/edit#gid=824106711">link</a>
+                            <h3>Conclusioni finali e sviluppi futuri</h3>
+                            In conclusione il modello preaddestrato yolov8x.pt risulta essere performante e accurato al
+                            netto dei pochi problemi citati sopra. Per migliorare ancora i conteggi effettuati si potrebbe
+                            addestrare questo modello con ulteriori dati notturni. E per risolvere il problema dei SUV si
+                            potrebbe implementare questa categoria nel riconoscimento per evitare confusione con i
+                            truck. Per quanto riguarda la linea di counting questa potrebbe essere posizionata con un
+                            margine maggiore dai fine carreggiata dato che a volte i mezzi pesanti che transitano nella
+                            corsia più a destra risultano essere troppo al limite con la linea tracciata, venendo quindi
+                            esclusi dal conteggio.
+                            
                             </p>
 							
-							<embed src="Tesina_Visione_e_Percezione_2022-2023.pdf" width="840px" height="1200px" type="application/pdf">
+							
 							
                         </div><!--//content-->
                     </div><!--//section-inner-->                 
@@ -188,10 +557,12 @@
 			<div class="secondary col-md-4 col-sm-12 col-xs-12">
                 <aside class="info aside section">
                     <div class="section-inner">
-                        <h2 class="heading">Autore/i</h2>
+                        <h2 class="heading">Autori</h2>
                         <div class="content">
                             <p> 
                                 Manuele Capece
+                            </p>
+                            <p> 
                                 Gianfranco Manfreda
                             </p>
                         </div><!--//content-->
@@ -203,10 +574,6 @@
                     <div class="section-inner">
                         <h2 class="heading">Riferimenti</h2>
 						<div class="content">
-						    <p>Riferimenti ad articoli scientifici e pagine web
-                            </p>
-							
-							<p>Esempi:</p>
 							<div class="item">
 								<a href="https://github.com/ultralytics/ultralytics?ref=blog.roboflow.com"
 								target="_blank">[1] Glenn Jocher and Ayush Chaurasia and Jing Qiu (n.d.). Ultralytics YOLOv8.</a>
@@ -220,8 +587,8 @@
 								target="_blank">[3] Roboflow. (n.d.). Supervision-0.1.0. roboflow / supervision.</a>
 							</div>
                             <div class="item">
-								<a href="https://github.com/roboflow/supervision/tree/0.1.0"
-								target="_blank">[3] Roboflow. (n.d.). Supervision-0.1.0. roboflow / supervision.</a>
+								<a href="https://github.com/manuelecapece/VehicleDetecting-VeP-Unibas/tree/svUnibas"
+								target="_blank">[4] Link repository GitHub</a>
 							</div>
 							
                         </div><!--//content-->
