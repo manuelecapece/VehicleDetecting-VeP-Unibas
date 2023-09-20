@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!-- VeP http://web.unibas.it/bloisi/corsi/visione-e-percezione.html -->
+<html lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+    </title>
+	<!-- Meta -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descrizione del progetto">
+    <meta name="author" content="Domenico Bloisi adapted a 3rd Wave Media template">    
+    <link rel="shortcut icon" href="http://web.unibas.it/bloisi/tutorial/favicon.ico">  
+    <link href="VeP-progetto_files/css.txt" rel="stylesheet" type="text/css">
+    <link href="VeP-progetto_files/css1.txt" rel="stylesheet" type="text/css"> 
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="VeP-progetto_files/bootstrap.css">   
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="VeP-progetto_files/font-awesome.css">
+        
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="VeP-progetto_files/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+</head> 
+
+<body>
+    <!-- ******HEADER****** --> 
+    <header class="header">
+        <div class="container">                       
+            <img class="profile-image img-responsive pull-left" src="img.png" alt="Inserire immagine qui" hegiht="500" width="500">
+            <div class="profile-content pull-left">
+                <h1 class="name">VEHICLE TRACKING AND COUNTING USING YOLOV8, BYTETRACK & SUPERVISION</h1>
+                <h2 class="desc"></h2>
+            </div>
+
+            <div class="profile-content pull-right">
+				<img class="profile-image img-responsive pull-left"
+				    src="http://web.unibas.it/bloisi/assets/images/logo.png"
+					alt="unibas logo"
+					height=97 width=312/>
+				
+				<p>&nbsp;</p>
+				<h3 class="desc">
+				<a href="http://web.unibas.it/bloisi/corsi/visione-e-percezione.html"
+				target="_blank">
+				Corso di Visione e Percezione</a>
+				</h3>
+			</div>
+			
+        </div><!--//container-->
+    </header><!--//header-->
+    
+    <div class="container sections-wrapper">
+        <div class="row">
+            <div class="primary col-md-8 col-sm-12 col-xs-12">
+			
+			    <section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading">Problema</h2>
+                        <div class="content">
+                            <p>
+                                Nel progetto realizzato si vuole proporre un sistema di rilevamento e conteggio di veicoli in transito su un'autostrada, in varie condizioni metereologiche.
+                                Il sistema proposto fa uso di Yolov8 per il rilevamento dei veicoli autostradali ripresi da un cavalcavia, ByteTrack per il
+                                loro tracciamento e l'ultima libreria Python di Roboflow - Supervision, per il conteggio dei
+                                veicoli.
+							</p>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+				
+				<section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading">Motivazioni</h2>
+                        <div class="content">
+                            <p>
+                                Il conteggio di oggetti in movimento e' uno dei casi d'uso piu' popolari nella visione artificiale
+                                (CV). Viene utilizzato, tra l'altro, nell'analisi del traffico e come parte dell'automazione dei
+                                processi di produzione. 
+							</p>
+							
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+			
+                <section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading"><a id="goals"></a>Obiettivi</h2>
+                        <div class="content">
+                            <p>
+                                Descrizione degli obiettivi del progetto :
+                                Conteggio e rilevamento in entrata e in uscita di : car, truck, motorcycle, bus. 
+                            </p>
+							<p>
+							<ol>
+								<li>Utilizzo di Yolov8 per il rilevamento dei veicoli</li>
+								<li>Utilizzo di ByteTrack per il tracciamento</li>
+								<li>Utilizzo e Implementazione di Supervision per il conteggio dei veicoli</li>
+							</ol>
+							</p>
+                                                     
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+				
+				<section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading"><a id="dataset"></a>Metodo</h2>
+                        <div class="content">
+                            <p>Descrivere il procedimento utilizzato per risolvere il problema,
+							evidenziando quali algoritmi noti sono stati utilizzati
+                        Per risolvere il problema abbiamo implemetato il codice della libreria Supervision di Roboflow. In particolare abbiamo realizzato le classi che effettuano il conteggio delle singole categorie.
+                        Come primo step ci siamo concentrati sul rilevamento dei veicoli.
+                        La rete utilizzata per il rilevamento e' l'ultima versione di Yolo ovvero YOLOV8.
+                        Successivamente abbiamo aggiunto il modulo per il tracciamento operato da ByteTrack.
+                        Infine per il conteggio dei veicoli abbiamo usato le classi create ed inserite nel branch svUnibas di Supervision.
+                        </p>		                         
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+				
+				<section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading"><a id="dataset"></a>Implementazione e Codice</h2>
+                        <div class="content">
+                            <p>Descrivere la tecnologia utilizzata per risolvere il problema</p>
+							<p>Per esempio:<br>
+							<ul>
+							    <li>Python 3.10.12</li>
+								<li>YOLOv8.0.20</li>
+                                <li>yolox.__version__: 0.1.0</li>
+                                <li>ByteTrack 0.1.0</li>
+                                <li>Supervision 0.1.0</li>							
+                            </ul>
+							</p>
+							
+							<p>
+                            <font color="red">https://github.com/manuelecapece/supervision/tree/svUnibas</font><br>
+							</p>
+                                                     
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+				
+				
+				<section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading"><a id="dataset"></a>Dataset</h2>
+                        <div class="content">
+                            <p>
+                                I dati utilizzati fanno riferimto al modello pre addestrato chiamato 'yolov8x.pt', il link per il download e' il seguente:
+                                https://docs.ultralytics.com/models/yolov8/#supported-modes
+                            </p>
+                            							
+                                                     
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+				
+				<section class="about section">
+                    <div class="section-inner">
+                        <h2 class="heading"><a id="training"></a>Risultati</h2>
+                        <div class="content">
+                            							
+								
+							<h3>Risultati qualitativi</h3>
+							<p>I video dei tracking prodotti si trovano nella cartella video/predict del drive condiviso Progetto V&P. 
+                                In particolare sono stati realizzati 7 video 3 in condizioni diurne, 3 in condizioni notturne uno in condizioni di neve.
+                                I risultati dei tracking sono disponibili nella cartella risultati del drive.
+                            </p>
+							
+													
+							<h3>Risultati quantitativi</h3>
+							<p>
+                                Per l'analisi dei risultati qualitativi si rimanda al capitolo 4 della tesina allegata.
+                            </p>
+							
+							<embed src="Tesina_Visione_e_Percezione_2022-2023.pdf" width="840px" height="1200px" type="application/pdf">
+							
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+                
+            </div><!--//primary-->
+            
+			<div class="secondary col-md-4 col-sm-12 col-xs-12">
+                <aside class="info aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Autore/i</h2>
+                        <div class="content">
+                            <p> 
+                                Manuele Capece
+                                Gianfranco Manfreda
+                            </p>
+                        </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </aside><!--//aside-->                        
+								
+                             
+                <aside class="blog aside section">
+                    <div class="section-inner">
+                        <h2 class="heading">Riferimenti</h2>
+						<div class="content">
+						    <p>Riferimenti ad articoli scientifici e pagine web
+                            </p>
+							
+							<p>Esempi:</p>
+							<div class="item">
+								<a href="https://github.com/ultralytics/ultralytics?ref=blog.roboflow.com"
+								target="_blank">[1] Glenn Jocher and Ayush Chaurasia and Jing Qiu (n.d.). Ultralytics YOLOv8.</a>
+							</div>
+                            <div class="item">
+								<a href="https://github.com/ifzhang/ByteTrack"
+								target="_blank">[2] Zhang, Y. (2022). ByteTrack: Multi-Object Tracking by Associating Every Detection Box.</a>
+							</div>
+                            <div class="item">
+								<a href="https://github.com/roboflow/supervision/tree/0.1.0"
+								target="_blank">[3] Roboflow. (n.d.). Supervision-0.1.0. roboflow / supervision.</a>
+							</div>
+                            <div class="item">
+								<a href="https://github.com/roboflow/supervision/tree/0.1.0"
+								target="_blank">[3] Roboflow. (n.d.). Supervision-0.1.0. roboflow / supervision.</a>
+							</div>
+							
+                        </div><!--//content-->
+                    </div><!--//section-inner-->
+                </aside><!--//section-->                            
+              
+            </div><!--//secondary-->    
+        </div><!--//row-->
+    </div><!--//masonry-->
+    
+    <!-- ******FOOTER****** --> 
+    <footer class="footer">
+        <div class="container text-center">
+                <small class="copyright">This template adapted from <a href="http://themes.3rdwavemedia.com/" target="_blank">3rd Wave Media</a></small>
+        </div><!--//container-->
+    </footer><!--//footer-->
+
+
+ 
+ 
+
+ 
+
+</body></html>
