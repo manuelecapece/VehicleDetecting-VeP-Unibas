@@ -5,7 +5,7 @@ ByteTrack per il loro tracciamento e l'ultima libreria Python di Roboflow - Supe
 All'interno della cartella supervision si trovano le classi che abbiamo modificato e quelle che abbiamo aggiunto in base alle nostre necessità.
 
 ISTRUZIONI ESECUZIONE DEL CODICE
-Il progetto è stato realizzato attraverso un notebook Colab nominato VeichleCounting, situato nella cartella Notebook sia su gitHub che sulla cartella drive del progetto.
+Il progetto è stato realizzato attraverso un notebook Colab nominato VeichleCounting, situato nella cartella Notebook sia su gitHub che sulla cartella drive del progetto (vedi VeP-progetto per i riferimenti).
 1) Nella prima sezione vengono installati tutti gli strumenti necessari.
 2) Successivamente vengono scaricati all'interno del notebook i video su cui è possibile effettuare le predizioni
   In questa fase viene scelto il video su cui eseguire il processo.
