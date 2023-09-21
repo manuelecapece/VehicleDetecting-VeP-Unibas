@@ -335,7 +335,7 @@
                             A questo punto l’unica cosa di cui abbiamo bisogno è annotare il frame richiamando
                             all’annotatore <i>box_annotaor</i> il metodo <i>.annotate</i> che prende in input il frame non elaborato
                             (ndarray) e i detections. Se si desidera visualizzare informazioni più dettagliate in prossimità del bounding box, ad esempio il valore
-                            dell’id della classe, posso passare un parametro aggiuntivo all’annotatore chiamato ‘labels’.
+                            dell’id della classe, posso passare un parametro aggiuntivo all’annotatore chiamato <i>'labels'</i>.
                             Considerando che gli esseri umani lavorano meglio con il testo piuttosto che con i numeri, i
                             modelli Yolov8 contengono proprietà chiamate names: <i>model.model.names</i>
                             e posso mappare gli ID di classe in quei nomi.
@@ -362,7 +362,7 @@
                             </p>
                             <h3>Tracking Detections with ByteTrack</h3>
                             <p>
-                                Il principale obiettivo, arrivati a questo punto, è collegare il tracker, già installato
+                                Il principale obiettivo, arrivati a questo punto, è collegare il tracker già installato
                                 nell’ambiente. Si crea un’istanza:
                                 <pre><code class="plaintext">byte_tracker = BYTETracker(BYTETrackerArgs())</code></pre>
                                 Il tracker <i>BYTETracker</i> accetta argomenti che sono sotto forma di classe python e nel ciclo
@@ -438,7 +438,7 @@ line_annotator_truck.annotateTruck(frame=frame,line_counter_truck=line_counter_t
                                   text-decoration: none; 
                                 }
                               </style>
-                              <a href="https://github.com/manuelecapece/VehicleDetecting-VeP-Unibas/tree/svUnibas" class="red-link">https://github.com/manuelecapece/VehicleDetecting-VeP-Unibas/tree/svUnibas</a>           
+                              <a href="https://github.com/manuelecapece/VehicleDetecting-VeP-Unibas" class="red-link">https://github.com/manuelecapece/VehicleDetecting-VeP-Unibas</a>           
                               <h3>Colab notebook</h3>
                             <iframe src="VeichleCountinghtml.html" style="width:100%; height:800px; margin-bottom: 20px;"></iframe>
                             <p>
@@ -488,8 +488,10 @@ line_annotator_truck.annotateTruck(frame=frame,line_counter_truck=line_counter_t
 								
 							<h3>Risultati qualitativi</h3>
 							<p>I video dei tracking prodotti si trovano nella cartella video/predict del drive condiviso Progetto V&P. 
-                                In particolare sono stati realizzati 7 video 3 in condizioni diurne, 3 in condizioni notturne uno in condizioni di neve.
-                                I risultati dei tracking sono disponibili nella cartella risultati del drive al seguente <a href="https://drive.google.com/drive/folders/166-pnjjHR7Hbce5EWeJq9bJYAmHB9coH">link</a>
+                                In particolare sono stati realizzati 7 video: 3 in condizioni diurne, 3 in condizioni notturne e uno in condizioni atmosferiche avverse ovvero precipitazioni nevose.
+                                I risultati dei tracking sono disponibili nella cartella risultati del drive al seguente <a href="https://drive.google.com/drive/folders/14WfbII4iwGSsgf6wKYGVB1xk-lssGtAE?usp=sharing">link</a>.
+                                I video sono suddivisi per conteggio generale e per categorie e si trovano rispettivamente nelle cartelle: <a href="https://drive.google.com/drive/u/0/folders/16LPi6KCjo5Ec_zKg3ncgdhVD7qMk99HK"><i><b>generale</b></i></a>
+                                e <a href="https://drive.google.com/drive/u/0/folders/166-pnjjHR7Hbce5EWeJq9bJYAmHB9coH"><i><b>categorie</b></i></a> 
                             </p>
                             <video style="width:100%; margin-bottom: 15px; margin-top: 15px" controls>
                                 <source src="video\day2-predict.webm" type="video/webm">
@@ -528,7 +530,7 @@ line_annotator_truck.annotateTruck(frame=frame,line_counter_truck=line_counter_t
                             quindi ci vorrebbe un video con più moto transitanti per trarre altre conclusioni.
                             <h4>Funzionamento notturno</h4>
                             In sostanza i problemi di tracciamento e conteggio che abbiamo riscontrato nelle condizioni
-                            di sole sono le stesse che si possono riscontrare nelle condizioni di buio.
+                            di ottima illuminazione sono le stesse che si possono riscontrare nelle condizioni di scarsa illuminazione.
 
                             Nel caso notturno il problema del rilevamento delle moto è ancora più evidente. In merito a
                             questo nel video <i><b>'night2'</b></i> delle 5 moto transitanti ne viene contata soltanto una.
@@ -591,7 +593,7 @@ line_annotator_truck.annotateTruck(frame=frame,line_counter_truck=line_counter_t
 								target="_blank">[3] Roboflow. (n.d.). Supervision-0.1.0. roboflow / supervision.</a>
 							</div>
                             <div class="item">
-								<a href="https://github.com/manuelecapece/VehicleDetecting-VeP-Unibas/tree/svUnibas"
+								<a href="https://github.com/manuelecapece/VehicleDetecting-VeP-Unibas"
 								target="_blank">[4] Link repository GitHub</a>
 							</div>
 							
