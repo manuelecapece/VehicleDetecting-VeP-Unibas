@@ -66,7 +66,7 @@
                                 Per risolvere questo problema, proponiamo un framework per il
                                 conteggio, la classificazione e il rilevamento dei veicoli. Nel sistema proposto utilizziamo
                                 <b>Yolov8</b> per il rilevamento dei veicoli autostradali ripresi da un cavalcavia, <b>ByteTrack</b> per il
-                                loro tracciamento e l'ultima libreria Python di <b>Roboflow</b> - Supervision per il conteggio dei
+                                loro tracciamento e l'ultima libreria Python di <b>Roboflow - Supervision</b> per il conteggio dei
                                 veicoli.
                                 Il problema da risolvere consiste nel rilevare e contare 4 tipologie di veicoli in transito lungo due direzioni.
                                 <ul>
@@ -105,7 +105,6 @@
                         <h2 class="heading"><a id="goals"></a>Obiettivi</h2>
                         <div class="content">
                             <p>
-                                Descrizione degli obiettivi del progetto :
                                 Generazione di un video che mostra il processo di detection and counting. Il conteggio dovrà essere incrementato ogni qual volta un veicolo superi la linea di demarcazione.
                                 Il risultato particolarizzato per tipologia verrà mostrato a video in tempo reale.
                                 Il sistema deve essere robusto a varie condizioni atmosferiche e metereologiche, nonchè di scarsa illuminazione.
@@ -150,7 +149,7 @@
                         <i>YoloV8</i> è stato sviluppato da <i>Ultralytics</i>, che ha anche creato l'influente modello <i>YoloV5</i>
                         che definisce il settore; include numerose modifiche e miglioramenti dell'architettura e
                         dell'esperienza degli sviluppatori rispetto a <i>YoloV5</i>.
-                        <i>YoloV8</i> è in fase di sviluppo attivo al momento della stesura di questo di questa tesina,
+                        <i>YoloV8</i> è in fase di sviluppo attivo al momento della realizzazione di questo progetto,
                         poiché Ultralytics lavora su nuove funzionalità e risponde al feedback della community.
                         Infatti, quando Ultralytics rilascia un modello, gode di un supporto a lungo termine:
                         l'organizzazione collabora con la comunità per rendere il modello il migliore possibile.</p>
@@ -206,11 +205,7 @@
                             Nel progetto in questione, utilizzeremo un tracker semplice ma
                             potente: <b>ByteTrack</b>[2]. Questo algoritmo mira principalmente a eseguire il tracciamento di
                             più oggetti, nel caso di studio in esame, di veicoli autostradali.
-                            <i>BYTETrack: Multi-Object Tracking by Associating Every Detection Box è un documento
-                            presentato all'ECCV2022 da Yifu Zhang et al</i>. Grazie alla sua struttura universale e alla
-                            relativa semplicità, è stato adottato da molti ricercatori successivi per i loro tracker MOT
-                            (Bot-SORT, SMILEtrack).
-                            L'innovazione principale di ByteETrack consiste nel mantenere le bounding box di
+                            L'innovazione principale di ByteTrack consiste nel mantenere le bounding box di
                             rilevamento non di sfondo a bassa confidenza, che di solito vengono scartate dopo il
                             filtraggio iniziale dei rilevamenti, e di utilizzare queste caselle a basso punteggio per una
                             fase di associazione secondaria. In genere, le caselle di rilevamento occluse hanno punteggi
@@ -263,9 +258,9 @@
                             perchè i modelli di computer vision funzionano più velocemente se li esegui su una GPU
                             piuttosto che su una CPU.
                             Poi creiamo una variabile HOME per rendere più facile la gestione dei percorsi.
-                            I video sui quali effettueremo le predizioni si troveranno nella cartella <i>‘content/video’</i>.
-                            I video col tracciamento e conteggio dei veicoli si troveranno nella cartella
-                            <i>‘content/video/result'</i>, mentre il percorso per con il tracciamento e il conteggio dei veicoli
+                            I video sui quali effettueremo le predizioni, che sono stati scaricati in precedenza, si troveranno nella cartella <i>‘content/video’</i>.
+                            I video col tracciamento e conteggio di tutti i veicoli in generale si troveranno nella cartella
+                            <i>‘content/video/result'</i>. Mentre i video con il tracciamento e il conteggio dei veicoli
                             suddivisi per classi_id si troveranno nel percorso <i>‘content/video/result/per_casistiche’</i>
                             Ora è possibile installare Yolov8 ma, considerando che l’ultima versione è ancora in fase di
                             costruzione, è meglio specificare una versione specifica bloccata così da avere un notebook
@@ -302,8 +297,8 @@
                             Per scegliere un solo frame bisogna innanzitutto creare un iteratore, estrapolare il
                             fotogramma successivo ed eseguire il modello pre-addestrato sul frame, che restituirà un
                             elenco di previsioni che associamo alla variabile <i>‘results’</i>.
-                            Se richiamo a results il metodo <i>.boxes.xyxy</i> e faccio una stampa <i>print(results.boxes.xyxy)</i> mi
-                            restituirà il tensore python contenente le posizioni degli oggetti sul frame:
+                            Se chiamo il metodo <i>.boxes.xyxy</i> sulla variabile <i>‘results’</i> e ne faccio una stampa <i>print(results.boxes.xyxy)</i> verrà 
+                            resituito il tensore python contenente le posizioni degli oggetti sul frame:
                             <div style="text-align: center;">
                                 <p></p>
                                 <img src="immagini\tensore.png" width="500">
@@ -339,8 +334,8 @@
                             insieme di colori usati da quel particolare annotatore).
                             A questo punto l’unica cosa di cui abbiamo bisogno è annotare il frame richiamando
                             all’annotatore <i>box_annotaor</i> il metodo <i>.annotate</i> che prende in input il frame non elaborato
-                            (ndarray) e i detections. Se si desidera bounding box più dettagliati, ad esempio stampare
-                            l’id della classe, posso passare un parametro aggiuntivo all’annotatore chiamato ‘labels’.
+                            (ndarray) e i detections. Se si desidera visualizzare informazioni più dettagliate in prossimità del bounding box, ad esempio il valore
+                            dell’id della classe, posso passare un parametro aggiuntivo all’annotatore chiamato ‘labels’.
                             Considerando che gli esseri umani lavorano meglio con il testo piuttosto che con i numeri, i
                             modelli Yolov8 contengono proprietà chiamate names: <i>model.model.names</i>
                             e posso mappare gli ID di classe in quei nomi.
