@@ -21,7 +21,7 @@ Il progetto è stato realizzato attraverso un notebook Colab nominato VeichleCou
   Il primo in cui il software conterà indistintivamente ogni veicolo che transita dalla linea di demarcazione.
   Il secondo in cui vengono contati i veicoli transitanti rispettivamente per ogni categoria.
 Una volta generati i video vengono caricati sulla cartella drive del progetto, il link che porta alla loro posizione viene mostrato nel notebook.
-
+![Testo alternativo dell'immagine](https://github.com/manuelecapece/VehicleDetecting-VeP-Unibas/blob/svUnibas/template-progetto-VeP/immagini/day5scren.png)
 # ENG
 In the project we aim to propose a system for the detection and counting of vehicles traveling on a highway under various weather conditions.
 The proposed system uses Yolov8 for the detection of highway vehicles captured from an overpass, ByteTrack for their tracking, and Roboflow's latest Python library - Supervision, for vehicle counting.
